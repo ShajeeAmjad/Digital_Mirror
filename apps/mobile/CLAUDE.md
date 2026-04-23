@@ -68,3 +68,35 @@ Profile, TrendsFeed
 - Mock Skia: `jest.mock('@shopify/react-native-skia', () => require('@shopify/react-native-skia/src/mock'))`
 - Mock MediaPipe: provide a fixture of 478 landmark points
 - Run: `yarn test` / `yarn test --coverage`
+
+## Wireframes
+Before implementing any screen, read its wireframe HTML first, then cross-reference
+the design tokens in @docs/design-system.md for colours, typography, and spacing.
+
+| Screen name            | Wireframe folder                        |
+|------------------------|-----------------------------------------|
+| SplashScreen           | @wireframes/01_splash_welcome/code.html |
+| FaceProfileSetup       | @wireframes/02_face_profile_setup/code.html |
+| GoalSelection          | @wireframes/03_goal_selection/code.html |
+| HomeScreen             | @wireframes/04_home/code.html           |
+| CameraUpload           | @wireframes/05_camera_upload/code.html  |
+| CreationModeSelector   | @wireframes/06_creation_mode_selector/code.html |
+| EditorScreen (empty)   | @wireframes/07_1_editor_empty/code.html |
+| EditorScreen (editing) | @wireframes/07_2_editor_mid_edit/code.html |
+| EditorScreen (post-AI) | @wireframes/07_3_editor_post_gen/code.html |
+| EditorScreen (layers)  | @wireframes/07_4_editor_layers_view/code.html |
+| AICritique             | @wireframes/08_ai_critique/code.html    |
+| ProductRecommendations | @wireframes/09_product_recommendations/code.html |
+| BeforeAfterExport      | @wireframes/10_before_after_export/code.html |
+| PaywallScreen          | @wireframes/11_paywall/code.html        |
+| TutorialOverview       | @wireframes/12_tutorial_overview/code.html |
+| TutorialStepDetail     | @wireframes/13_tutorial_step_detail/code.html |
+| ProfileScreen          | @wireframes/14_profile/code.html        |
+| TrendsFeed             | @wireframes/15_trends_feed/code.html    |
+
+### How to use wireframes
+1. Read the HTML to understand component hierarchy, layout, and interactive states
+2. Map CSS classes/variables to React Native StyleSheet equivalents using design-system.md
+3. The PNG (screen.png in the same folder) is your visual QA reference — compare your
+   implementation against it before marking a screen task as done
+4. Do not copy HTML/CSS directly — translate structure and intent into RN primitives

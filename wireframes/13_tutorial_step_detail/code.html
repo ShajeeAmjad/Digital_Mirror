@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Mirror - Step Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3b0900",
+                        "outline": "#88726d",
+                        "primary": "#94452e",
+                        "surface-container-highest": "#e6e2db",
+                        "inverse-on-surface": "#f4f0e9",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1c17",
+                        "on-secondary-container": "#656464",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdbd1",
+                        "background": "#fdf9f2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e4e2e1",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-bright": "#fdf9f2",
+                        "on-tertiary-container": "#feffeb",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-dim": "#dddad3",
+                        "surface-container-low": "#f7f3ec",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "surface-tint": "#974730",
+                        "secondary": "#5f5e5e",
+                        "inverse-primary": "#ffb5a0",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#5d5c59",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#e4e2e1",
+                        "on-surface": "#1c1c17",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fffdff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary-fixed": "#e5e2dd",
+                        "outline-variant": "#dbc1ba",
+                        "on-primary-fixed-variant": "#78301b",
+                        "surface": "#fdf9f2",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-container": "#767571",
+                        "primary-container": "#b35d44",
+                        "surface-container": "#f2ede6",
+                        "inverse-surface": "#31302c",
+                        "surface-container-high": "#ece8e1",
+                        "on-surface-variant": "#55433e",
+                        "on-tertiary-fixed-variant": "#474743"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "grid-gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "page-margin": "20px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["inter"],
+                        "headline-sm": ["newsreader"],
+                        "label-sm": ["inter"],
+                        "body-md": ["inter"],
+                        "display-lg": ["newsreader"],
+                        "display-md": ["newsreader"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .dotted-overlay {
+            background-image: radial-gradient(circle, #B35D44 1.5px, transparent 1.5px);
+            background-size: 12px 12px;
+            mask-image: radial-gradient(ellipse at 75% 45%, black 20%, transparent 60%);
+            -webkit-mask-image: radial-gradient(ellipse at 75% 45%, black 20%, transparent 60%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60 docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<button class="text-[#B35D44] dark:text-[#D98E77] hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl italic font-serif text-stone-900 dark:text-stone-100 font-serif font-medium tracking-tight Newsreader">Digital Mirror</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a woman with natural makeup and clean skin looking directly at camera, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4teytVXP0fWam6F1_Ps_tNct5cjxwoHxdkizk-Fbv6OIcwTr-K-5j8pMvDtBeqBG79cKpFPv2eFCkrBLZ-ymvg095Z95NjzoH4iZloky-jzOqwZJQQuRTVnoGfs1cssFR9P-2UZ1YKkQYjwd7jjyZgqKSBkc1rmH3T_jQm3mwLH8MCaIyrJL_wHFFiPaUX5VMCzM31KEbmhYWctZJ4Y1NHBesDeO68qOkehe7huTW8_o-iLdn5Vr9WzuY5XSELhI41ZNX1pAW5g"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 max-w-screen-xl mx-auto w-full px-page-margin py-section-gap flex flex-col md:flex-row gap-section-gap">
+<!-- AI Mirror Interface / Image Section -->
+<section class="flex-1 flex flex-col gap-stack-md">
+<div class="relative aspect-[4/5] md:aspect-square w-full bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/10">
+<!-- Original User Photo -->
+<img alt="Mirror View" class="w-full h-full object-cover" data-alt="high-detail portrait of a woman's face, neutral expression, soft natural window light, focused on the eyes and brow area" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH9orxeywV2BsAYi35amLWgbvDxd5e8vxQYL_X3zEPMSLwrfvv-DZ26QGUqbYJovaQlC_uEXXd1LGFNUvaHy5pCwkZUH7Vg8w7k7G7B0JJ7a9Zn5Nu60XewSxnSv9QixE2ZhPQfDz4ZGY6XRKz9t6eVR4uoZH2PE95JVQC_YUzr_bbnu2FAOojRfH72JbI_5VAfbWi4RmSCWlXcnMzOqatkFkhVjVjrge_8j7IHrsJyLF-cNW9MaNHdf4WzJJ-Xa52i8nZEFK-Cw"/>
+<!-- Dotted Diagram Overlay -->
+<div class="absolute inset-0 dotted-overlay opacity-60"></div>
+<!-- Annotations -->
+<div class="absolute top-[42%] right-[22%] flex flex-col items-end">
+<div class="w-4 h-4 rounded-full bg-primary border-2 border-white mb-2"></div>
+<span class="bg-white/80 backdrop-blur-sm px-2 py-1 rounded text-[10px] font-label-sm text-primary uppercase">Focus Area</span>
+</div>
+<!-- Floating Control -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-4">
+<button class="bg-white/90 backdrop-blur-md p-3 rounded-full shadow-sm text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span>
+</button>
+<button class="bg-white/90 backdrop-blur-md p-3 rounded-full shadow-sm text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+</div>
+</div>
+<!-- Step Progress Indicator -->
+<div class="flex items-center gap-2 px-1">
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container-highest rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container-highest rounded-full"></div>
+<span class="ml-2 font-label-sm text-secondary text-xs">STEP 02 / 04</span>
+</div>
+</section>
+<!-- Instructional Sidebar -->
+<aside class="flex-1 md:max-w-md flex flex-col justify-between py-2">
+<div class="space-y-section-gap">
+<!-- Header -->
+<div>
+<span class="text-primary font-label-sm text-xs uppercase tracking-widest mb-2 block">Application Detail</span>
+<h2 class="font-display-md text-on-surface mb-stack-md">Define the Crease</h2>
+</div>
+<!-- Instructions -->
+<div class="bg-surface-container-low p-stack-lg rounded-lg border border-outline-variant/20">
+<p class="font-body-lg text-on-surface leading-relaxed italic Newsreader">
+                        "Apply the warm brown shadow starting from the outer corner, blending upward."
+                    </p>
+<div class="mt-stack-md flex items-start gap-3 text-secondary">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+<p class="text-sm font-body-md">Keep your eyes open while blending to ensure the shadow is visible above the lid crease.</p>
+</div>
+</div>
+<!-- Referenced Product Card -->
+<div class="border border-outline-variant/30 rounded-lg p-stack-md flex items-center gap-stack-md bg-surface-container-lowest">
+<div class="w-16 h-16 rounded bg-surface-container-highest flex-shrink-0 overflow-hidden">
+<img alt="Product" class="w-full h-full object-cover" data-alt="luxury eyeshadow palette with warm terracotta and earth tones, sleek minimalist packaging on a clean beige surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNthwDlgwqZqhfj5-qP4GeX2VCA4UKt__uO7Khl7BEr-M9w7rCLqqzNIcK9tfMSEhuEgMTpzUZ9ph6ocmefxugnMSCfpRjH5zGFgLyjhkEsdf4q4cLQWZLaHPy4WVxoSuWNwzOihlOHVdVy6Jo0hP7KM2q-fw3_r7WXsdQLbWmarfdb_kzFXEc0U7MHqerEnrkqW9_x7WyMvve5pyiQ16rLsoPMhlfWhBTTCZ87-ik7GgTyTEwQbbwKqrLCs9E5zIIvDJuJldbvg"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-sm text-xs uppercase text-secondary mb-1">In Use</h4>
+<p class="font-body-md font-semibold text-on-surface">The Terracotta Palette</p>
+<p class="font-label-sm text-primary">Shade: Dusk</p>
+</div>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</div>
+<!-- Action Area -->
+<div class="mt-section-gap pt-stack-lg border-t border-outline-variant/10">
+<button class="w-full bg-primary-container text-on-primary-container py-4 px-6 rounded-lg font-label-sm uppercase tracking-widest hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                    Next Step
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full mt-4 py-2 text-secondary font-label-sm uppercase text-xs tracking-tighter hover:text-on-surface transition-colors">
+                    Previous Step
+                </button>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-[#F9F7F2]/90 dark:bg-stone-950/90 backdrop-blur-md border-t border-stone-200/60 dark:border-stone-800/60 fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-safe-offset-2">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#B35D44] dark:text-[#D98E77] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Trends</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Profile</span>
+</a>
+</nav>
+<!-- Spacer for Bottom Nav -->
+<div class="h-20 w-full"></div>
+</body></html>

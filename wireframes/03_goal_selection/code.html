@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Goal Selection - Digital Mirror</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#3b0900",
+                    "outline": "#88726d",
+                    "primary": "#94452e",
+                    "surface-container-highest": "#e6e2db",
+                    "inverse-on-surface": "#f4f0e9",
+                    "error": "#ba1a1a",
+                    "on-background": "#1c1c17",
+                    "on-secondary-container": "#656464",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffdbd1",
+                    "background": "#fdf9f2",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e4e2e1",
+                    "tertiary-fixed-dim": "#c8c6c2",
+                    "surface-bright": "#fdf9f2",
+                    "on-tertiary-container": "#feffeb",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "surface-dim": "#dddad3",
+                    "surface-container-low": "#f7f3ec",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "surface-tint": "#974730",
+                    "secondary": "#5f5e5e",
+                    "inverse-primary": "#ffb5a0",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e6e2db",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#5d5c59",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#e4e2e1",
+                    "on-surface": "#1c1c17",
+                    "on-tertiary-fixed": "#1c1c19",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#fffdff",
+                    "on-secondary-fixed-variant": "#474747",
+                    "tertiary-fixed": "#e5e2dd",
+                    "outline-variant": "#dbc1ba",
+                    "on-primary-fixed-variant": "#78301b",
+                    "surface": "#fdf9f2",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "tertiary-container": "#767571",
+                    "primary-container": "#b35d44",
+                    "surface-container": "#f2ede6",
+                    "inverse-surface": "#31302c",
+                    "surface-container-high": "#ece8e1",
+                    "on-surface-variant": "#55433e",
+                    "on-tertiary-fixed-variant": "#474743"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "grid-gutter": "16px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "page-margin": "20px",
+                    "section-gap": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["inter"],
+                    "headline-sm": ["newsreader"],
+                    "label-sm": ["inter"],
+                    "body-md": ["inter"],
+                    "display-lg": ["newsreader"],
+                    "display-md": ["newsreader"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .newsreader { font-family: 'Newsreader', serif; }
+        .inter { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<header class="bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60 docked full-width top-0 z-40 sticky">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<button class="text-[#B35D44] dark:text-[#D98E77] hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl italic font-serif text-stone-900 dark:text-stone-100 font-serif font-medium tracking-tight Newsreader">Digital Mirror</h1>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline/10">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a woman with natural makeup and glowing skin looking into the camera with a soft smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeogGKfnwaaXANLaJWcKLClqG9MXvK19YsEeoTgJTdcFqo9976wi9vl6PhVcPZi5Dkp-oVCjYzQRSMjis4kY8prvFskJaitdR6ZFeBO1BrjAm9mAe7GjEFiq7Mq_wOot8UMbCAJP3JO39Rz1V3teWe0_Ntg2UkTrFiuFroBWNs3EHjBb8SiQx3ZdZ16Qzt7809CUlW0aYWF3aMTwDjlWL4Wa5w8B_1Y2YmSAECcCGuAU1ORxpxjG4i0KJoq2daHHxpYITfuNwulA"/>
+</div>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto px-page-margin py-section-gap flex flex-col items-center min-h-[calc(100vh-128px)]">
+<div class="w-full max-w-3xl text-center mb-section-gap">
+<h2 class="font-display-md text-display-md text-on-surface mb-stack-sm newsreader">What is your beauty goal?</h2>
+<p class="font-body-md text-body-md text-secondary max-w-md mx-auto">Select the journey that best aligns with your personal aesthetic today.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter w-full max-w-4xl">
+<button class="group relative flex flex-col items-start p-stack-md bg-surface-container-low border border-outline/10 rounded-xl transition-all duration-300 hover:border-primary-container text-left">
+<div class="w-full aspect-[4/3] overflow-hidden rounded-lg mb-stack-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="minimalist portrait of a woman with clean skin and soft natural light focusing on natural beauty and elegance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8jsPJAKw4RRrPu3mar91E09RwdztOSL0dhChM7eAyhn1M3Yc6jMByEND53CmrLXpOuv8IMHhLNTHx7ADDVP_Sl0qivJjgIfOU6l3WxIPW8dU-vRtSOQhzghM-HoTG1sOHcBY2zp8r_Sj3wbxJYQrEBaTPniPfVYorQjB9ZnekLsIq7QF997Zx0gr7oIzrP360T8UE83CsENHTRZ8NpE0o_jY0U7vpWvK2XHgXmUWf6anv--jWrnDhBNrky0mMZOoHZctErKZZPw"/>
+</div>
+<div class="w-full">
+<span class="font-label-sm text-label-sm text-primary-container uppercase mb-2 block">01</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 newsreader">Everyday Elegance</h3>
+<p class="font-body-md text-secondary text-sm">Master effortless, natural looks that highlight your features daily.</p>
+</div>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<button class="group relative flex flex-col items-start p-stack-md bg-surface-container-low border border-outline/10 rounded-xl transition-all duration-300 hover:border-primary-container text-left">
+<div class="w-full aspect-[4/3] overflow-hidden rounded-lg mb-stack-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="glamorous woman in evening attire with bold makeup and dramatic cinematic lighting for a special occasion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxpARAmZXIy4idUT0bLOSI1SCCxfhigfwZywiRViUKGwjiTBT9S92LWPCDJDxWfmcidTzl3Se-JlThNYI4cfBEltjk80CxABfgpk4Gt9Ui03nfmauMlBVx3y6qNnfS1d-5LsLegK0V2F0HP17IQKxHj0iI-v6QrZCpdp1K4ZBhIE-QRg6_bvUU30EQTm9uAG3-m7yjorroGbr9tnKOm-LrEQfQ5qsbkyrDkq1dggeOmt5YBdUAyj18ptWW6tiQte8TkEVTbL9yng"/>
+</div>
+<div class="w-full">
+<span class="font-label-sm text-label-sm text-primary-container uppercase mb-2 block">02</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 newsreader">Special Occasions</h3>
+<p class="font-body-md text-secondary text-sm">Step into the spotlight with bold, evening glam and sophisticated styles.</p>
+</div>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<button class="group relative flex flex-col items-start p-stack-md bg-surface-container-low border border-outline/10 rounded-xl transition-all duration-300 hover:border-primary-container text-left">
+<div class="w-full aspect-[4/3] overflow-hidden rounded-lg mb-stack-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="overhead shot of professional makeup brushes and palettes arranged neatly on a clean white marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARbBRhAGGxL8aYg_wLNKIJSi4hN3KZ-W59zz94Y02xuIhmAaWS_bsMccSyW_EeYcAY7SrnKPaUZgsRHLu1clXWStfFI6a1gruH0sQT-6KyP6GDF_bjCeFIA833ULLXwcWVfp6_15V6Gj6G9WE0TTqsQfeEkUY5Nu0HQO1-0Gxr3DeekO4DFZ91AqsyHXLE7MUbirgMrgP6PpUHlHSJJgaPzdRn5ofceKM6N3kjk04RF4JLVKXxyqMqjq3v19qZn-iFmxjxEzUKeQ"/>
+</div>
+<div class="w-full">
+<span class="font-label-sm text-label-sm text-primary-container uppercase mb-2 block">03</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 newsreader">Learn Techniques</h3>
+<p class="font-body-md text-secondary text-sm">Follow step-by-step masterclasses and refine your application skills.</p>
+</div>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<button class="group relative flex flex-col items-start p-stack-md bg-surface-container-low border border-outline/10 rounded-xl transition-all duration-300 hover:border-primary-container text-left">
+<div class="w-full aspect-[4/3] overflow-hidden rounded-lg mb-stack-md">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close-up of premium skincare and cosmetic product bottles with soft shadows and elegant aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUlykBsVWpoNORUedxG-4oby7KzcuZduJ_BMJD9Heo6tKOjDiWtfTOCaI2hKsQwjx4dAKCy7rJAYHaUb8OoNwQATPi4XdERVsW9bJD64uOUlzPTVZvtzCM7QC3aDH6vKyAox_XJeHZZXGM6-IQvqPkk17V159MurytCQ0eoPGMNdlV_WxNTiq7UvYZLI077WezPdqfg3C-FKclnCt-q52K4_GBjB3WzVu12mCvyoGa_0F6tlWAReA6hL07jVophr8JNTdeNGu_dQ"/>
+</div>
+<div class="w-full">
+<span class="font-label-sm text-label-sm text-primary-container uppercase mb-2 block">04</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 newsreader">Product Discovery</h3>
+<p class="font-body-md text-secondary text-sm">Find your perfect matches with AI-powered skin analysis and curations.</p>
+</div>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+</div>
+<div class="w-full max-w-4xl mt-section-gap flex justify-center pb-24">
+<button class="w-full md:w-auto md:min-w-[240px] h-14 bg-stone-300 text-stone-500 font-label-sm uppercase tracking-[0.15em] rounded-full cursor-not-allowed flex items-center justify-center transition-all">
+                Continue
+                <span class="material-symbols-outlined ml-2 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<footer class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 bg-[#F9F7F2]/90 backdrop-blur-md border-t border-stone-200/60">
+<div class="flex flex-col items-center justify-center text-[#B35D44] transition-colors">
+<span class="material-symbols-outlined mb-1" data-icon="home_max" style="font-variation-settings: 'FILL' 1;">home_max</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400">
+<span class="material-symbols-outlined mb-1" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Trends</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400">
+<span class="material-symbols-outlined mb-1" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Profile</span>
+</div>
+</footer>
+</body></html>

@@ -11,6 +11,7 @@ apps/mobile/      React Native + Expo bare workflow (iOS + Android)
 backend/          FastAPI (Python) — REST API, image pipeline, AI inference
 docs/             Architecture, data model, API spec, ML pipeline, compliance
 tasks/            Phased execution plans — work through these in order
+wireframes/       HTML + PNG per screen — read the HTML before implementing any screen
 .github/          CI workflows for mobile and backend
 ```
 
@@ -57,6 +58,13 @@ ruff check . && mypy .          # Lint + type-check
 - ML inference approach → @docs/ml-pipeline.md
 - Regulatory & compliance → @docs/regulatory.md
 - Env vars guide → @docs/env-guide.md
+- Design system (colours, typography, spacing, components) → @docs/design-system.md
+
+## Wireframes
+Every screen has a folder in wireframes/ containing code.html (layout + structure)
+and screen.png (visual reference). Always read the HTML before implementing a screen —
+it contains richer structural information than the PNG.
+Screen-to-wireframe folder mapping is in apps/mobile/CLAUDE.md.
 
 ## Task execution order
 Work through tasks/ in phase order. Each file has checkboxes. Check them off as you go.

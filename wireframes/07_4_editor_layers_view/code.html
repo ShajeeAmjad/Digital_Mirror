@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Mirror - Layers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#474743",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dddad3",
+                        "surface-container": "#f2ede6",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#b35d44",
+                        "outline-variant": "#dbc1ba",
+                        "primary-fixed": "#ffdbd1",
+                        "tertiary-container": "#767571",
+                        "inverse-on-surface": "#f4f0e9",
+                        "inverse-primary": "#ffb5a0",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "inverse-surface": "#31302c",
+                        "secondary": "#5f5e5e",
+                        "background": "#fdf9f2",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-background": "#1c1c17",
+                        "surface": "#fdf9f2",
+                        "secondary-container": "#e4e2e1",
+                        "on-primary-fixed-variant": "#78301b",
+                        "surface-variant": "#e6e2db",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "surface-tint": "#974730",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "on-secondary-container": "#656464",
+                        "on-tertiary-container": "#feffeb",
+                        "error": "#ba1a1a",
+                        "tertiary": "#5d5c59",
+                        "on-secondary-fixed-variant": "#474747",
+                        "surface-bright": "#fdf9f2",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e5e2dd",
+                        "surface-container-low": "#f7f3ec",
+                        "on-surface": "#1c1c17",
+                        "primary": "#94452e",
+                        "surface-container-high": "#ece8e1",
+                        "surface-container-highest": "#e6e2db",
+                        "outline": "#88726d",
+                        "on-surface-variant": "#55433e",
+                        "on-primary-container": "#fffdff",
+                        "on-primary-fixed": "#3b0900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "section-gap": "32px",
+                        "grid-gutter": "16px",
+                        "page-margin": "20px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["newsreader"],
+                        "body-lg": ["inter"],
+                        "label-sm": ["inter"],
+                        "display-md": ["newsreader"],
+                        "display-lg": ["newsreader"],
+                        "body-md": ["inter"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-hidden">
+<!-- Background Canvas (Simulating the Editor) -->
+<div class="fixed inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[20%] brightness-90" data-alt="Stunning close-up portrait of a woman with natural makeup, soft sunlight, editorial beauty photography style, muted tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBavtEZ_XVsKqKUwuhtbEUT1GEM1LP_qf_FGeCupTolDphgmCBJCmKh1QEzFReXyscQyUCVYSQoBzmAJpVT-ioPtOE_snopXVhqqg9X1FYL56hNoHK_dZzEavT1lyqkSLVwMlUz9RfWO8byQmEbdO8LKAQYUGuI5yvJkbOfVUVnlGy7W3TDh_XiQBPlwHOC2X4OeBKwKM7ogbGNjwfCq6hE5NpVnVVUt7ZrGX5MBhJlU62XVS1beQr2o4MrcMYuANLaAfDswYQQWA"/>
+<!-- Overlay for Modal Context -->
+<div class="absolute inset-0 bg-stone-900/40 backdrop-blur-sm"></div>
+</div>
+<!-- Top App Bar (Shared Component Anchor) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<button class="text-[#B35D44] dark:text-[#D98E77] hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="text-2xl italic font-serif text-stone-900 dark:text-stone-100 font-serif font-medium tracking-tight Newsreader">Digital Mirror</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline/20">
+<img class="w-full h-full object-cover" data-alt="User profile avatar, woman with a warm smile, soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2B7H9xtcbcJx1_V6W8lMmtKLmRarC0xEgQSaNI6pOyv5AHWWNdx3AMjOIhthr1EkGMN0Urj7od9uU3oZyyFIlqR1EV6lI1V025DAgTyvDQRwNqJ-2vYQWxVSIV6pjqvac2FkKFvDkQ9cyp_kQQ8kB2vfi8oToo6lkTUoImf9JDYa2kyJtS5b-E5pSoEcCVoJDtibS_JVbJClxDQmZPFrF0WsF4lKeD4hkd0BE7ZDb12RXdXj21ZBzz9xdfEzO6Ze9YwLLcefUrw"/>
+</div>
+</div>
+</header>
+<!-- Modal Content: Layers List -->
+<main class="relative z-10 pt-24 pb-32 px-page-margin min-h-screen flex flex-col items-center">
+<div class="w-full max-w-md bg-surface-bright/95 backdrop-blur-xl rounded-xl border border-outline-variant/30 shadow-2xl overflow-hidden">
+<!-- Modal Header -->
+<div class="px-6 pt-8 pb-4 border-b border-outline-variant/10">
+<div class="flex justify-between items-end mb-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Layers</h2>
+<span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">3 active</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant/70 italic">Refine your composition</p>
+</div>
+<!-- Scrollable Layers List -->
+<div class="p-4 space-y-4">
+<!-- Layer Item 1 -->
+<div class="group relative flex items-center p-4 bg-surface-container rounded-lg border border-outline-variant/20 hover:border-primary/30 transition-all">
+<div class="flex-shrink-0 mr-4">
+<div class="w-12 h-12 rounded bg-stone-200 overflow-hidden border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Abstract cosmetic swatch of smoky eye shadow pigment, rich charcoal and bronze tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUVCNJ8nF4pTUMwzhZmHsPort8npFX-V4GW3IRZDSN2USW2BFcfqzuk2KphNNsBHqKnH7xiSq53dXgyDfEjBgkR4bBYaAbdsb6ZjlIKgloKnViSzFI2wCL5oGgp2wfc_0l8uV1N3F3ccfXhJkjv6CT2-EWZcB62dwUlxItxZ3ivUVTcOcd6IxRq0T4IMKRY45LhgEyBxHWxE-5sQefciwacsunm3Rl2mA7vUsluSqjaQgUaZwQhKxzBHwGGk8obRfPqoCCZ_CgyA"/>
+</div>
+</div>
+<div class="flex-grow">
+<span class="block font-label-sm text-label-sm uppercase text-primary mb-1">Eyes</span>
+<h3 class="font-body-md font-medium text-on-surface">Soft Smoky Eye</h3>
+<div class="flex items-center mt-1 space-x-2">
+<div class="w-full h-1 bg-outline-variant/30 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+<span class="font-label-sm text-[10px] text-secondary">85%</span>
+</div>
+</div>
+<div class="flex items-center ml-4 space-x-3">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<button class="text-on-surface-variant/40 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Layer Item 2 -->
+<div class="group relative flex items-center p-4 bg-surface-container rounded-lg border border-outline-variant/20 hover:border-primary/30 transition-all">
+<div class="flex-shrink-0 mr-4">
+<div class="w-12 h-12 rounded bg-stone-200 overflow-hidden border border-outline-variant/40">
+<img class="w-full h-full object-cover" data-alt="Lipstick swatch macro, nude silk texture, creamy beige with soft sheen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCITOtxxpYqpgAR2u0b_2Kz9F5aj6fcOUrRMtyDqZ48SW0HTYVmEMz-345ItPG3urSW2ynVI9ikP7BNVBYzp6iAkQYd_ZXIjmZCZVury6Arpi08Coztm5S9_A767gY5yyOOCIgaSgSxslVCdN_nd1VslfDi7mvTfB4hVNLFBAwNRVSINCxq_gZ6bYjn6eN3x3alW8itnjTg55lZvshxSUZSYYq9XINHWL_u8v0oscsI7h_QCWwZ3sWZzDrA_4cXo0xXRWcXDB7iyg"/>
+</div>
+</div>
+<div class="flex-grow">
+<span class="block font-label-sm text-label-sm uppercase text-primary mb-1">Lips</span>
+<h3 class="font-body-md font-medium text-on-surface">Nude Silk Lip</h3>
+<div class="flex items-center mt-1 space-x-2">
+<div class="w-full h-1 bg-outline-variant/30 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[60%]"></div>
+</div>
+<span class="font-label-sm text-[10px] text-secondary">60%</span>
+</div>
+</div>
+<div class="flex items-center ml-4 space-x-3">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+<button class="text-on-surface-variant/40 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Layer Item 3 (Hidden State Example) -->
+<div class="group relative flex items-center p-4 bg-surface-container/50 rounded-lg border border-outline-variant/10 opacity-60 transition-all">
+<div class="flex-shrink-0 mr-4">
+<div class="w-12 h-12 rounded bg-stone-200 overflow-hidden border border-outline-variant/20 grayscale">
+<img class="w-full h-full object-cover" data-alt="Terracotta blush powder swatch, warm earthy orange-red tone, fine matte texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoO71fbWd76zM_X0m2lMxMj03Syhu4F2z-R0icFyBqEc-jwwqiZwTDzR0Cog6Wdq4X6OTS7DWmRT9TkjSd_-nDWHkZCDIdQf3DqmO2RjyVP435xrUPeGcLfBiYxosThm5y4jvMMXSkQOT-JaadAXYtTcmwu-HAY4TTTmnjVqBhLcqYJBylxTQsqxj5R0T0LaiLf2sCuRADbJTPS6kPg83GPN6o-XekZ7U0uBWOdIxsb8Tj2X1j5rsSTlyB4RKScBrupF9xQ2OqNg"/>
+</div>
+</div>
+<div class="flex-grow">
+<span class="block font-label-sm text-label-sm uppercase text-secondary mb-1">Cheeks</span>
+<h3 class="font-body-md font-medium text-on-surface">Warm Terracotta Blush</h3>
+<div class="flex items-center mt-1 space-x-2">
+<div class="w-full h-1 bg-outline-variant/30 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[45%]"></div>
+</div>
+<span class="font-label-sm text-[10px] text-secondary">45%</span>
+</div>
+</div>
+<div class="flex items-center ml-4 space-x-3">
+<button class="text-on-surface-variant/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span>
+</button>
+<button class="text-on-surface-variant/40 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Modal Actions -->
+<div class="p-6 bg-surface-container-low border-t border-outline-variant/10 flex flex-col gap-3">
+<button class="w-full py-4 bg-primary text-on-primary font-label-sm uppercase tracking-widest rounded-lg hover:opacity-90 transition-all">
+                    Add New Layer
+                </button>
+<button class="w-full py-3 bg-transparent text-secondary font-label-sm uppercase tracking-widest border border-outline-variant/30 rounded-lg hover:bg-surface-variant transition-all">
+                    Flatten All
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Nav Bar (Shared Component Anchor) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#F9F7F2]/90 dark:bg-stone-950/90 backdrop-blur-md border-t border-stone-200/60 dark:border-stone-800/60 rounded-t-lg h-20">
+<div class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-safe-offset-2">
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors Active: transform scale-90 duration-200 ease-in-out">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Trends</span>
+</button>
+<!-- Active Library/Editor context -->
+<button class="flex flex-col items-center justify-center text-[#B35D44] dark:text-[#D98E77] transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_stories" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

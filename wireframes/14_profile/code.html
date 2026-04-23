@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#3b0900",
+                    "outline": "#88726d",
+                    "primary": "#94452e",
+                    "surface-container-highest": "#e6e2db",
+                    "inverse-on-surface": "#f4f0e9",
+                    "error": "#ba1a1a",
+                    "on-background": "#1c1c17",
+                    "on-secondary-container": "#656464",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffdbd1",
+                    "background": "#fdf9f2",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e4e2e1",
+                    "tertiary-fixed-dim": "#c8c6c2",
+                    "surface-bright": "#fdf9f2",
+                    "on-tertiary-container": "#feffeb",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "surface-dim": "#dddad3",
+                    "surface-container-low": "#f7f3ec",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "surface-tint": "#974730",
+                    "secondary": "#5f5e5e",
+                    "inverse-primary": "#ffb5a0",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e6e2db",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#5d5c59",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#e4e2e1",
+                    "on-surface": "#1c1c17",
+                    "on-tertiary-fixed": "#1c1c19",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#fffdff",
+                    "on-secondary-fixed-variant": "#474747",
+                    "tertiary-fixed": "#e5e2dd",
+                    "outline-variant": "#dbc1ba",
+                    "on-primary-fixed-variant": "#78301b",
+                    "surface": "#fdf9f2",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "tertiary-container": "#767571",
+                    "primary-container": "#b35d44",
+                    "surface-container": "#f2ede6",
+                    "inverse-surface": "#31302c",
+                    "surface-container-high": "#ece8e1",
+                    "on-surface-variant": "#55433e",
+                    "on-tertiary-fixed-variant": "#474743"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "grid-gutter": "16px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "page-margin": "20px",
+                    "section-gap": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["inter"],
+                    "headline-sm": ["newsreader"],
+                    "label-sm": ["inter"],
+                    "body-md": ["inter"],
+                    "display-lg": ["newsreader"],
+                    "display-md": ["newsreader"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        .pb-safe-offset-2 { padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px)); }
+        body { background-color: #fdf9f2; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<button class="text-[#B35D44] dark:text-[#D98E77] hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-2xl italic font-serif text-stone-900 dark:text-stone-100 font-serif font-medium tracking-tight Newsreader">Digital Mirror</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a woman with natural makeup and soft lighting, clean skin, neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlPZCJVVaXXW49ZgiDlVYkR8iEU2WtwXRck7_mcdS02MebXtOCdK2EgSViDZ9b_pDaE4KyWoVsqokDonNCKavyIhtvWz8JWit5wZV2LS0-sISMECiFitXL6HqDlhXncdsw9DGK8_uwx2mLlPCOY8Y8xSLzDVc2t0Rcu9xTgPDMkBWPyKvvl6YMNfqi8tHkFwSo1eRFu5mZ1-IF2kku5GJDK1W8kZ_-Rt4QFnaomi4cEzFNEvMVaj4CU8f9T7AI8CEtxeWPA5pXEw"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-page-margin max-w-screen-md mx-auto">
+<!-- Hero Profile Section -->
+<section class="text-center mb-section-gap">
+<div class="relative inline-block mb-stack-md">
+<div class="w-32 h-32 rounded-full overflow-hidden border-2 border-surface-container-highest mx-auto p-1 bg-surface-container-low">
+<img alt="Elena Vance" class="w-full h-full object-cover rounded-full" data-alt="Elegant close-up portrait of a woman with soft lighting and natural skin texture, serene expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBobay7EEnXUCEa3DFacw8B9JG8FY1lVDJ-bn0kwwTchUAs_JkyBPpYoeIHp9CdEcpwBili0t9W0lEJaft1ql12l8gUFceo78UahcICPAPU7hHRwP-XRHZfpb34f23uy-Ka9IVjN5Mx11JtNDmraZjF84UgH3xqQY3RdHsorE4yWzayANV5cc7SY0sivw16T4-q7Wvk_rh18BqPTDbxCRrhz3uv7WeYhyfboBicXT822F5Oxaif-ENqPJgbfVhOHxi7yjTLADjRZg"/>
+</div>
+<button class="absolute top-0 right-0 bg-surface-container-lowest p-2 rounded-full border border-outline-variant/20 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+</div>
+<h2 class="font-headline-sm text-display-md text-on-surface mb-1">Elena Vance</h2>
+<div class="flex items-center justify-center gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest bg-primary-fixed/30 px-3 py-1 rounded-full">Premium Member</span>
+</div>
+</section>
+<!-- Face Profile Summary Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-stack-md mb-section-gap">
+<div class="bg-surface-container-low p-stack-md border border-outline-variant/10 rounded-xl text-center">
+<span class="font-label-sm text-[10px] text-secondary uppercase tracking-widest block mb-1">Face Shape</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Oval shape</p>
+</div>
+<div class="bg-surface-container-low p-stack-md border border-outline-variant/10 rounded-xl text-center">
+<span class="font-label-sm text-[10px] text-secondary uppercase tracking-widest block mb-1">Undertone</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Neutral</p>
+</div>
+<div class="bg-surface-container-low p-stack-md border border-outline-variant/10 rounded-xl text-center">
+<span class="font-label-sm text-[10px] text-secondary uppercase tracking-widest block mb-1">Eye Type</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Almond eyes</p>
+</div>
+</section>
+<!-- My Gallery Grid -->
+<section>
+<div class="flex justify-between items-end mb-stack-lg">
+<h3 class="font-headline-sm text-headline-sm italic">My Gallery</h3>
+<a class="font-label-sm text-label-sm text-secondary hover:text-primary transition-colors uppercase tracking-widest" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-stack-md">
+<div class="aspect-[3/4] bg-surface-container-highest rounded-lg overflow-hidden group cursor-pointer border border-outline-variant/10">
+<img alt="Saved Look 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial beauty shot of soft mauve eyeshadow and glossy lips on clear skin, soft high-key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl-vZKa0TdXXVkCEr3Is4rsHwcFYbx9g1jF8SpvcfM4QAF8G-QvKcJP-mrWn4qAnEK7uWnCU3jzfRwMNtQFbGtk7drWhxp76c0f1E8ign2wVw-E6PCgeM64wUAkzP88xK0eODS8301oHlGH16IBQuV2m5mWA76rHS8AX_-kRWpBo23pE-Ags5akwRySpuo3O4w6x2NoIEnuxlDF7mjP4NukvcoCKlaknggeL9ph0HuuORdC5OL97V9eXIauJo8OQqHf5JzsXEVxw"/>
+</div>
+<div class="aspect-[3/4] bg-surface-container-highest rounded-lg overflow-hidden group cursor-pointer border border-outline-variant/10">
+<img alt="Saved Look 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Bold red lipstick application on a model with neutral undertones, high fashion editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcG6s6DGHlJ1o4OFKX_dzVxPJTI6l92OY0PByOwkWdhCiPeuw6Qg_Qq5TRMGVXVjPkDo3T3wZulRz2cdldM1ONnh9SV2NLR0dkRvl_FhXgA1xrJPxHcAk9Bxc1sh0LDe43KLf0LMWTPBMX_YUT5GOM1BJ0IyooDsajiWkuxq2T2W6WfkMob3LObBZJHxt2UylykH_6yJb9Z-wq1tTRyez8OaAsU0Q51-vLihVtm0nTBvVlt4eeb9b_cNlr1-kLFdNMqxwwf6jfZQ"/>
+</div>
+<div class="aspect-[3/4] bg-surface-container-highest rounded-lg overflow-hidden group cursor-pointer border border-outline-variant/10">
+<img alt="Saved Look 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Natural dewy skin finish with minimal eye makeup, golden hour lighting highlighting cheekbones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEWZjJmzeL52dEGWWSgQOaPzA11TCApv0f595d-ZzDJ0_rGdrWkfCMHD1Ch7T6NtPzURczt9_OM7KtTNog7DJGkglg276nhZXP_NS5ir-hb7Nvpa0N5n5VpPQwi7UYQ7Te05A9VCcxn-j1sKlXfL3Y1Qm7f6SfvvkCIWduCQ46ZPoYD48Y1KIhdkPRq_-eaBmPI1cl7EXOv-Wqp14qf6entNCblaC8zTW4gEOKwhcQgH3ieFidgI8LfMCerRrDH9sqyoxS-w7eEg"/>
+</div>
+<div class="aspect-[3/4] bg-surface-container-highest rounded-lg overflow-hidden group cursor-pointer border border-outline-variant/10">
+<img alt="Saved Look 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artistic eyeliner graphic look, sharp black lines on clean skin, minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc3P8KV9gTexlb7w9HeGi0mSxetnntj6ZDHTBxNshN4_3UdQirTvdvV5JVDGH0g-KoPIBj70ZoV0XHCoFTte3XCjkV_CwktzHEgyrFsQ5CQywqypQRgzgSqsQ31q5zkNacPb1fdswcNWq6sHF7F1PtncLK1gL2FaSK0LBYEuPhl6lp9Vy8-PsUw8a1gB4AC0bOBvUGrd9OcwI3IBsyTbtSNHUnsNibFuAgpngbiIkdNvtv3BK3tczz3DFqjR3hzJe0J1k32c6YKQ"/>
+</div>
+<div class="aspect-[3/4] bg-surface-container-highest rounded-lg overflow-hidden group cursor-pointer border border-outline-variant/10">
+<img alt="Saved Look 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Soft focused beauty shot highlighting lashes and eyebrows, ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALHMtoq2uxnn7qUyIav5l7HY_CfDMyOBJg_xv8xtWXPKs6-5s-e2Erk0nSDfeWhfY69nwkp0-UYuyA8DfstPwy6OuDIUIt7w8X6xyejFiN7d9BXmAUQgaZMfuIIXlNOe3f6c4_2taChbH7dyYr14KANxer9yyKnM6quAIGMLR7oFfVZFq5Gom-m6K7Oy5Y-TJwO7HaoBF7AfZdp2i3L23ZgoZiAwIa4eDt4tSDWY072c_8XDnrtA27MoDU1CmBdazWi_VCL1A_QA"/>
+</div>
+<div class="aspect-[3/4] bg-surface-container-highest rounded-lg overflow-hidden group cursor-pointer border border-outline-variant/10">
+<img alt="Saved Look 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Golden shimmer eyeshadow and bronzed skin, luxury resort beauty aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTsl-I0aFe8B-GcqEQ6YykHATQKHU-7ZLWeCkIwK9BizOkjengupfivfddoxprGUV_M-_Lw4QSfOn2daQwHBNpkSSDwWFoIeOo9d3HO-FTwT6KMxLcg4pEK4fCDg7mTLCs09hmODKxaToHz15ye12BAObhv_QVPW35N3Rbq8vR_YR7N8WkFL5nRV-AG8kYCjcPEMLrGUjdihiaPRo6uyZ6YhVbPInkm9p12Sh4PJg8ms-xp1sXgevOkuQofOuv5LrroKzxBnmibw"/>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-safe-offset-2 bg-[#F9F7F2]/90 dark:bg-stone-950/90 backdrop-blur-md border-t border-stone-200/60 dark:border-stone-800/60">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 group" href="#">
+<span class="material-symbols-outlined mb-1">home_max</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 group" href="#">
+<span class="material-symbols-outlined mb-1">auto_awesome</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Trends</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 group" href="#">
+<span class="material-symbols-outlined mb-1">auto_stories</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#B35D44] dark:text-[#D98E77] transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader font-bold">Profile</span>
+</a>
+</nav>
+</body></html>

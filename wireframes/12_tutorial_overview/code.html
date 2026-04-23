@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Mirror - Recreate the Soft Glam Look</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3b0900",
+                        "outline": "#88726d",
+                        "primary": "#94452e",
+                        "surface-container-highest": "#e6e2db",
+                        "inverse-on-surface": "#f4f0e9",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1c17",
+                        "on-secondary-container": "#656464",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdbd1",
+                        "background": "#fdf9f2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e4e2e1",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-bright": "#fdf9f2",
+                        "on-tertiary-container": "#feffeb",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-dim": "#dddad3",
+                        "surface-container-low": "#f7f3ec",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "surface-tint": "#974730",
+                        "secondary": "#5f5e5e",
+                        "inverse-primary": "#ffb5a0",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#5d5c59",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#e4e2e1",
+                        "on-surface": "#1c1c17",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fffdff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary-fixed": "#e5e2dd",
+                        "outline-variant": "#dbc1ba",
+                        "on-primary-fixed-variant": "#78301b",
+                        "surface": "#fdf9f2",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-container": "#767571",
+                        "primary-container": "#b35d44",
+                        "surface-container": "#f2ede6",
+                        "inverse-surface": "#31302c",
+                        "surface-container-high": "#ece8e1",
+                        "on-surface-variant": "#55433e",
+                        "on-tertiary-fixed-variant": "#474743"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "grid-gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "page-margin": "20px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Newsreader"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Newsreader"],
+                        "display-md": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .Newsreader { font-family: 'Newsreader', serif; }
+        .inter { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar Shared Component -->
+<header class="bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<button class="text-[#B35D44] dark:text-[#D98E77] hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl italic font-serif text-stone-900 dark:text-stone-100 font-serif font-medium tracking-tight Newsreader">Digital Mirror</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a woman with soft glowing skin and minimal makeup against a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI7UMhJe6NVaKU5-d8JWlyYiWpePA5KePeMYMZKN-yrEb8YfrzJDH0vsKPXFPX6sPQ2RqljzeN9XK454QZowSxNHpo6gsML1P7zpIvRSPXM_cnDNGj-F0jxi1WrwBidvOOZ2Tvaisd72ITG0Tk16K2xJccD7z851af4bVhhkUl10Y80zFtF9FRTROvzgELlYHqkspLGH8TFNVuLavKrnCJKb-LyPqxsrrgu6xSratOHD-Jat9iiAEAmyKM-Ip7Hl5v8SKnd-S4qQ"/>
+</div>
+</div>
+</header>
+<main class="max-w-screen-md mx-auto px-page-margin pt-stack-lg">
+<!-- Tutorial Header & Progress -->
+<section class="mb-section-gap">
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden mb-2">
+<div class="h-full bg-primary-container w-[20%] transition-all duration-500"></div>
+</div>
+<div class="uppercase tracking-widest text-outline text-label-sm font-label-sm">Masterclass Series</div>
+<h2 class="font-display-md text-display-md text-on-background italic">Recreate the Soft Glam Look</h2>
+<p class="font-body-md text-body-md text-secondary max-w-lg">A timeless, sophisticated aesthetic prioritizing skin luminosity and gentle eye definition.</p>
+</div>
+</section>
+<!-- Tutorial Steps Layout -->
+<section class="space-y-grid-gutter">
+<!-- Step 1 (Active/Expanded) -->
+<div class="group bg-surface-container-low p-stack-md rounded-xl border border-outline-variant/30 flex gap-stack-md items-start transition-all">
+<div class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary-container text-on-primary-container font-label-sm">
+                    1
+                </div>
+<div class="flex-grow space-y-stack-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Prep the skin.</h3>
+<p class="font-body-md text-body-md text-secondary">Start with a hydrating primer to create a smooth, dew-focused canvas for your base products.</p>
+<div class="aspect-video w-full rounded-lg overflow-hidden mt-stack-md border border-outline-variant/20">
+<img alt="Skin Prep" class="w-full h-full object-cover" data-alt="aesthetic close-up of a glass serum bottle with droplets on a minimalist beige background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVuuan5mbin5H_M6XacWbrJbTiUZJDRpekQ2vWwYmmbwMYWxPPc3x-4zLczlU-tkiCCZa3Wd1DAHAV-TOKtOstKvwzV0DRU4-BaT8Y00MJ-DxppslY3Q1AxFVtJN6gT48iZIo3UnMXwMslsvMjhF2turDVla9o9lE7VNIg8lJbErokXsXUWkYa5Jxo77W8b_abRoy-ZbfeWKi7uUGSk_w6KSCe6aSkno5uiwBlwF9T9MjX7Xs0IhdBwr2_bpR5XgmBMXLPK8m3IQ"/>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant/30 flex gap-stack-md items-center hover:bg-surface-container-low transition-all">
+<div class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-outline-variant text-outline font-label-sm">
+                    2
+                </div>
+<div class="flex-grow flex justify-between items-center">
+<h3 class="font-body-lg text-body-lg text-on-surface">Define the eyes.</h3>
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-outline-variant/20">
+<img alt="Eyes" class="w-full h-full object-cover" data-alt="extreme close up of a woman's eye with soft brown eyeshadow and perfectly groomed eyebrows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYXpeLOvrHU_O5b5Of05IrereHmTHrMDXLAgiMaVXLIFfuQR1S86l5AAR25NalUu4V0fQu8KjnglIDcUnDEH4VgRevWZ14E82KcL1OtcoQkG1_11VVWnqOh2BIdEq8uRDe0qqaJ9rPokwsl8OsdCSXEbn0IKX1c_XaTVDqDkF3Z9NUeb4su-6MzL0zjOiIkjUQjnLZjpKMCFMmqqyvNB2kDmyOZW151HjW4F9ESTKCvGCO7cLP8LNdEishxKc9mKicUX8GnuPl1g"/>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant/30 flex gap-stack-md items-center hover:bg-surface-container-low transition-all">
+<div class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-outline-variant text-outline font-label-sm">
+                    3
+                </div>
+<div class="flex-grow flex justify-between items-center">
+<h3 class="font-body-lg text-body-lg text-on-surface">Build the base.</h3>
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-outline-variant/20">
+<img alt="Base" class="w-full h-full object-cover" data-alt="makeup brushes and foundation being applied to skin in a soft-focus editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxF_f9OhWBHSowQwRD1JsK35ZMPTKHK8YEVJKOgu_gNIzJ8kFXGvWZibMdLfYwYVUc3a2a1oTIP7qYmpmlgZU8wDdDRild636matZRtj83nBX5a41K_HZ0FGN0m6BxtJZXoI1WD6AR7uDOOfSkrM-tRmaQVuc_7L-JH7SP4LMn9ISl_hURcqYkjv0BHqDNuxV3zwAbmcUoccdg3iUB4vj8eBdMNk8MxQN0gS5M1wSVZEfE6bPEOxlnS1-NVj08soK_I8Iq2rvfxA"/>
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="group bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant/30 flex gap-stack-md items-center hover:bg-surface-container-low transition-all">
+<div class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-outline-variant text-outline font-label-sm">
+                    4
+                </div>
+<div class="flex-grow flex justify-between items-center">
+<h3 class="font-body-lg text-body-lg text-on-surface">Sculpt &amp; Blush.</h3>
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-outline-variant/20">
+<img alt="Blush" class="w-full h-full object-cover" data-alt="palette of cream blushes in various rose and peach tones on a clean white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxGepCt3-e_vfNidE2B0pBG_6IVFu0tKawYgURDOUMnHDOcZ6ZTHJl96MqnCaqx6LzgWI4tDqp7Khe54PGGaWLv3XCs6j6Su_fzNXzsw5VHKnMgWnyVzoBHh1pM74RELukQ1VP95Tpd-dsdzc2mIFhmvajO1HfvdeBLVXRLHM0ZIx4H3Zc7e0VVor_C_FsMw3-5DAp4shHc7tXC_PxvQERGzQjbxiLN89E4s22HNodcjjm8-4Fl7MBWMsVwFYY-rBjybSzWEe1mg"/>
+</div>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="group bg-surface-container-lowest p-stack-md rounded-xl border border-outline-variant/30 flex gap-stack-md items-center hover:bg-surface-container-low transition-all">
+<div class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-outline-variant text-outline font-label-sm">
+                    5
+                </div>
+<div class="flex-grow flex justify-between items-center">
+<h3 class="font-body-lg text-body-lg text-on-surface">The soft lip.</h3>
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-outline-variant/20">
+<img alt="Lip" class="w-full h-full object-cover" data-alt="close up of glossy pink lips in high-end cosmetic style lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1JFaWvoV-0SXlNw5Ba3TY5Olqr0MnBI3AnK0hC9Qdf9KOKHgnlReMzMF83-864RQNppZIocbnk4MW2pfhiPuvkodqPRKZ8ssdlPLKa-Y8PdsiiO6_jQBWVdoxJY9TAsZBdPADERTs_Y3JXKum8bVwwnaayH0wSSt0xV_2nqASQDeCVIIZ2GZ2_IR-mxPzOnsDA5sZUkncsO2MM51eGpB1EurMmaoJ6ize_LV5cC8aCKvqyJTz3_Zg1SGyRrKGq8tb-1bIPBN2qA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<div class="mt-section-gap sticky bottom-24 bg-background/80 backdrop-blur-sm py-4">
+<button class="w-full h-14 bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-widest rounded-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+                Start Step-by-Step
+                <span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar Shared Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 bg-[#F9F7F2]/90 dark:bg-stone-950/90 backdrop-blur-md border-t border-stone-200/60 dark:border-stone-800/60">
+<div class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#B35D44] dark:text-[#D98E77] transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Trends</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3b0900",
+                        "outline": "#88726d",
+                        "primary": "#94452e",
+                        "surface-container-highest": "#e6e2db",
+                        "inverse-on-surface": "#f4f0e9",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1c17",
+                        "on-secondary-container": "#656464",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdbd1",
+                        "background": "#fdf9f2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e4e2e1",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-bright": "#fdf9f2",
+                        "on-tertiary-container": "#feffeb",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-dim": "#dddad3",
+                        "surface-container-low": "#f7f3ec",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "surface-tint": "#974730",
+                        "secondary": "#5f5e5e",
+                        "inverse-primary": "#ffb5a0",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#5d5c59",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#e4e2e1",
+                        "on-surface": "#1c1c17",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fffdff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary-fixed": "#e5e2dd",
+                        "outline-variant": "#dbc1ba",
+                        "on-primary-fixed-variant": "#78301b",
+                        "surface": "#fdf9f2",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-container": "#767571",
+                        "primary-container": "#b35d44",
+                        "surface-container": "#f2ede6",
+                        "inverse-surface": "#31302c",
+                        "surface-container-high": "#ece8e1",
+                        "on-surface-variant": "#55433e",
+                        "on-tertiary-fixed-variant": "#474743"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "grid-gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "page-margin": "20px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Newsreader"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Newsreader"],
+                        "display-md": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .Newsreader { font-family: 'Newsreader', serif; }
+        .inter { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- Top Navigation -->
+<header class="bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-[#B35D44] dark:text-[#D98E77] hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="text-2xl italic font-serif text-stone-900 dark:text-stone-100 Newsreader font-medium tracking-tight">
+                Digital Mirror
+            </div>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline/20">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="close up portrait of a young woman with natural skin and glowing makeup against a soft beige background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmdBVxrHSCQPyB_wy1hMhdDIzo5s16ASR2r_iN85h3_dZZXiYJlxgaAN8vA0SKI6d8XiNLuOYw5FIHCCnRn0o6Ml3eAkPc9NOY789Sj0cvyh-OZypFitYcOZjPJyy0H5lOd64sulMz4tbq-Nm1sYHCF9CMCtdqN12obfZWfRnq8y3ax5iQMaNTXs0_w9RZgVs0oRyB25g96Sg2l5zlzYHrzY_xztr9ewMvi0QQsdlrjdgC8AJMFXJ_pal-s4GMZFJeXxdIujQouQ"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto px-page-margin pt-stack-lg">
+<!-- Editorial Header -->
+<section class="mb-section-gap text-center max-w-2xl mx-auto">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-stack-sm block">Current Perspective</span>
+<h1 class="font-display-lg text-display-lg italic Newsreader text-on-background mb-stack-md">This Week's Looks</h1>
+<p class="font-body-md text-body-md text-secondary max-w-md mx-auto">A curated selection of seasonal aesthetics and advanced digital finishes, optimized for your unique skin tone.</p>
+</section>
+<!-- Trends Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-stack-lg">
+<!-- Featured Trend: Monochrome Terracotta -->
+<article class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden aspect-[4/3] rounded-lg border border-surface-container-highest bg-surface-container">
+<img alt="Monochrome Terracotta" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="editorial high-fashion portrait of a woman with monochrome terracotta makeup on eyes, lips, and cheeks, soft cinematic lighting, warm earthy tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDti7L-6HnU15ueImEWkofQCFstaj6Tzz6bHo1mmwC5Sw-970YC0llNCi38Hrx_onefIKmnlg9TBW7S2OZK0Ay3uisHXFIYTD0TJQliBL-HNUM15qkeQ4tX5bzElLRK0fH3GPUSqZ77MLiQNqYBK0ejENyuK-9gjsCXY2Ns2L6CbdD3hYoxq0SZ_1dYAG0dB3s4HkQcEvx8o1wgDqR797505VjNBOXRpslHHLhBH-s5P-j8WPaZTNJ0T_2NIAPpt1s5BUMgrN9kVA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-stack-lg w-full flex justify-between items-end">
+<div>
+<span class="font-label-sm text-label-sm text-white/90 uppercase tracking-widest mb-stack-sm block">Trending Now</span>
+<h2 class="font-display-md text-display-md text-white Newsreader italic">Monochrome Terracotta</h2>
+</div>
+<button class="bg-primary-container text-white px-6 py-3 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-opacity active:scale-95">
+                            Try this
+                        </button>
+</div>
+</div>
+</article>
+<!-- Side Trend: The Glass Skin Edit -->
+<article class="md:col-span-4 group cursor-pointer">
+<div class="relative overflow-hidden h-full rounded-lg border border-surface-container-highest bg-surface-container">
+<img alt="The Glass Skin Edit" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="extreme close up of flawless dewy skin with high-shine highlights on cheekbones, minimalist aesthetic, bright clean studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo1uaSEaGAC4MsZjuogMuYJpSBbwi4sy0ap0TpbP02SWvLAY86i_k06wu7urehK-TB-5xbIMATSqw3GDvw5UUKjshCITomfWFjXCvfZj5ten2KQbEJRPSf7QQUY_jWIBALIAmfvYdIvoc-8rU9q-16yJePwfCe1so0E6MHbM0sVOkguQo4FW981mcshoFjYMjTVhK8cHDcfkdj7IH6-HgHpanDOqfrMe_ZoQR44H6OoJEzrTA8AUcCNyked1UOd87SzTJf_gu6xw"/>
+<div class="absolute inset-0 bg-stone-900/10 group-hover:bg-stone-900/20 transition-colors"></div>
+<div class="absolute top-0 left-0 p-stack-md">
+<div class="bg-background/90 backdrop-blur-sm border border-outline/10 px-3 py-1 rounded-full">
+<span class="font-label-sm text-label-sm text-primary uppercase">Skincare Focus</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 p-stack-md w-full bg-background/80 backdrop-blur-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface Newsreader mb-stack-sm">The Glass Skin Edit</h2>
+<button class="flex items-center gap-2 text-primary font-label-sm text-label-sm uppercase tracking-widest group-hover:translate-x-1 transition-transform">
+                            Explore <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Bottom Row: Midnight Satin -->
+<article class="md:col-span-4 group cursor-pointer">
+<div class="flex flex-col gap-stack-sm">
+<div class="relative overflow-hidden aspect-square rounded-lg border border-surface-container-highest bg-surface-container">
+<img alt="Midnight Satin" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="moody portrait with deep berry lips and soft charcoal eyeshadow, satin finish, dim atmospheric lighting with cool undertones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6n_0edXnXNWBfwd_GyKE0VHxOc5Sago2zz0muxsLS-cm0gMd7gqBdw1rjF81k3k21zug5tLb9-DrzxWhFI43JE6xi7paM6dKDPd0s4hciLJfFMXhhPKJjmp0eELAyfUnt8jfX9E_VviEsHG78r9uqVtDx3at1nqAC9e1UOy-w5Oot7Y5loAyCFCqRLNdPAChYDXSmzZkeL3rme7v-ZuaofkwNrzyUk6fDyQH2ixVCDpwsKoGjokkDYNurr5WS0yQiwEnqqqiyCg"/>
+</div>
+<div class="px-1">
+<h2 class="font-headline-sm text-headline-sm Newsreader mb-2">Midnight Satin</h2>
+<p class="font-body-md text-body-md text-secondary line-clamp-2 mb-4">Deep pigments and velvet textures for evening elegance.</p>
+<button class="w-full border border-outline/30 text-on-surface py-3 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-container-highest transition-colors active:scale-95">
+                            Try on Mirror
+                        </button>
+</div>
+</div>
+</article>
+<!-- Bottom Row: Golden Hour Glow -->
+<article class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden aspect-[21/9] rounded-lg border border-surface-container-highest bg-surface-container">
+<img alt="Golden Hour Glow" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="woman with golden iridescent eyeshadow and bronzed skin, sunlit flare, warm summer aesthetic, high-end editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh-vryDczrHPn7xp7YzTJ4M9uvleR8e4DO6RiGFPS6_5pZ0bF4DhSMnx5tpEZqSpoT5Y-4Qc49G8umgtt-JWKaVCMrCsNBuxxs5k9V5iR8Ntu8seKPzOWCBldPe6FRNHFy5bzATAHua8UQo3ZFzNrlk68upcVMEHT4O5JfdHVg0fN-O0lhmhQTGLZUQEJ0ICWwmeAyvv1vQLtRvAd848IdyRX2ubOZ6uEmFyMxgIyFvacIuthGXhP2vlTXrGKq5fvt3gJo4s6SwA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-stone-900/60 via-stone-900/20 to-transparent"></div>
+<div class="absolute inset-0 flex flex-col justify-center p-stack-lg max-w-md">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-widest mb-2">Editor's Pick</span>
+<h2 class="font-display-md text-display-md text-white Newsreader italic mb-4">Golden Hour Glow</h2>
+<div class="flex gap-4">
+<button class="bg-white text-stone-900 px-6 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:bg-stone-100 transition-colors">
+                                Try this
+                            </button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination/Load More Footer -->
+<footer class="mt-section-gap flex flex-col items-center">
+<div class="w-full h-px bg-outline/10 mb-stack-lg"></div>
+<button class="group flex items-center gap-3 font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-on-surface transition-colors">
+                Archive Looks 
+                <span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-300">expand_more</span>
+</button>
+</footer>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#F9F7F2]/90 dark:bg-stone-950/90 backdrop-blur-md border-t border-stone-200/60 dark:border-stone-800/60 docked full-width rounded-t-lg flex justify-around items-center px-4 pt-3 pb-safe-offset-2">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">home_max</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Home</span>
+</a>
+<!-- Trends (Active) -->
+<a class="flex flex-col items-center justify-center text-[#B35D44] dark:text-[#D98E77] transition-colors group" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1 font-bold">Trends</span>
+</a>
+<!-- Library -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">auto_stories</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Library</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">person</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Profile</span>
+</a>
+</nav>
+<!-- Contextual FAB - Suggesting the Mirror for Trends -->
+<button class="fixed bottom-24 right-6 bg-stone-900 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl active:scale-90 transition-transform z-40 border border-white/10">
+<span class="material-symbols-outlined text-[28px]">flare</span>
+</button>
+</body></html>

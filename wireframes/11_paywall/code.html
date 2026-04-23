@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#3b0900",
+                    "outline": "#88726d",
+                    "primary": "#94452e",
+                    "surface-container-highest": "#e6e2db",
+                    "inverse-on-surface": "#f4f0e9",
+                    "error": "#ba1a1a",
+                    "on-background": "#1c1c17",
+                    "on-secondary-container": "#656464",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffdbd1",
+                    "background": "#fdf9f2",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e4e2e1",
+                    "tertiary-fixed-dim": "#c8c6c2",
+                    "surface-bright": "#fdf9f2",
+                    "on-tertiary-container": "#feffeb",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "surface-dim": "#dddad3",
+                    "surface-container-low": "#f7f3ec",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "surface-tint": "#974730",
+                    "secondary": "#5f5e5e",
+                    "inverse-primary": "#ffb5a0",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e6e2db",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#5d5c59",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#e4e2e1",
+                    "on-surface": "#1c1c17",
+                    "on-tertiary-fixed": "#1c1c19",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#fffdff",
+                    "on-secondary-fixed-variant": "#474747",
+                    "tertiary-fixed": "#e5e2dd",
+                    "outline-variant": "#dbc1ba",
+                    "on-primary-fixed-variant": "#78301b",
+                    "surface": "#fdf9f2",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "tertiary-container": "#767571",
+                    "primary-container": "#b35d44",
+                    "surface-container": "#f2ede6",
+                    "inverse-surface": "#31302c",
+                    "surface-container-high": "#ece8e1",
+                    "on-surface-variant": "#55433e",
+                    "on-tertiary-fixed-variant": "#474743"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "grid-gutter": "16px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "page-margin": "20px",
+                    "section-gap": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["inter"],
+                    "headline-sm": ["newsreader"],
+                    "label-sm": ["inter"],
+                    "body-md": ["inter"],
+                    "display-lg": ["newsreader"],
+                    "display-md": ["newsreader"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .Newsreader { font-family: 'Newsreader', serif; }
+        .inter { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="bg-[#F9F7F2] border-b border-stone-200/60 flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined text-[#B35D44]" data-icon="close">close</span>
+</button>
+</div>
+<h1 class="text-2xl italic font-serif text-stone-900 font-medium tracking-tight Newsreader">Digital Mirror</h1>
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a woman with natural makeup and glowing skin, soft studio lighting, editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-XDunm7LF8Z2hKlJpWwG85e0gQIIOL8J9K-2m_fHHCcTRlaG5rDbJt-VwTgc1LNjJllhANJd2eeAk3fLpOE4jhhhzJGz6byO3We881kFXaRmmfVKaG75qJVyLcBX7PNjPFZru9TB2JQdF422cpXdigYTjt5dsAj6e7IBXNc2cD5og0EvfSvp-RxXZu0WXGD-gSHXdvwbCMkUxSzmtJXB31Y1hHMQ0QBjIuFrTtFVRtcELexHyOfkIRVFmbaZ2goABKkIRLy6c6A"/>
+</div>
+</header>
+<main class="w-full max-w-screen-xl px-page-margin py-section-gap flex flex-col items-center">
+<!-- Hero Section: Headlines & Montage -->
+<section class="w-full flex flex-col items-center text-center mb-section-gap">
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-stack-sm">Unlock the mirror</p>
+<h2 class="font-display-md text-display-md text-stone-900 mb-stack-lg max-w-2xl">Continue your beauty exploration</h2>
+<!-- Montage Grid -->
+<div class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-grid-gutter mt-8">
+<div class="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high border border-outline-variant/20">
+<img alt="Look 1" class="w-full h-full object-cover" data-alt="editorial makeup photography featuring a soft bronze glow look on a woman, ethereal lighting, minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJHvAfUat5MWqA3ZL7MBUZZsIAwosoraFcdWoTrrhweM0dzwkvPtGdiMHHCXzsRH7eyy3QADhCp-rZ3D5nWuT0NL1_TDBtuhlTcGcg3AnjAAVIGJStWCwVCGsHDJ0POSn4YolFLiuqCbi9jPFkquVzoWVSzhp_dQo67PdO3LwkBOLMms1-z8VKFcwjDIaD5Z9-NsZc-HMsGI5msg6xVxLj6kPqCiM94ARucOhZFmxFFYDli2BaRLGh9J3dnLJdN0hMtT0vxC6dYQ"/>
+</div>
+<div class="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high border border-outline-variant/20 md:mt-12">
+<img alt="Look 2" class="w-full h-full object-cover" data-alt="avant-garde editorial makeup with precise graphic eyeliner and dewy skin, professional lighting, neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAslSrUqCmSmp17Mrjsgf7n7Ysko6dUfQ5-M2r5MUBInpu40-1WFZbuH7e3W9JQhbLCUneOYGhLLXQYqXHwNf0TmtnSz3rUHhUFu-a9SJDNbY24qihB_yvMEW_oSAoi5GmsbsgStNQh_12Q7vGnYpirv-SmuiI7p52I1dB44OvgILIXAVI8RmTm4ibNQaBqqov09Y9tBZuy9TK7obcsFFZMyUfF8MdUnZhz8de5KqRQHMK3NMhJ8bw1rJdAeptRrCTKpx2frxGQ9Q"/>
+</div>
+</div>
+</section>
+<!-- Features Bento-lite -->
+<section class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-stack-lg mb-section-gap">
+<div class="flex flex-col items-center text-center p-stack-lg border border-outline-variant/10 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary mb-stack-sm text-3xl" data-icon="high_res">high_res</span>
+<h3 class="font-headline-sm text-headline-sm text-stone-900 mb-2">Unlimited HD renders</h3>
+<p class="font-body-md text-body-md text-secondary">Export your transformations in professional studio quality.</p>
+</div>
+<div class="flex flex-col items-center text-center p-stack-lg border border-outline-variant/10 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary mb-stack-sm text-3xl" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline-sm text-headline-sm text-stone-900 mb-2">Exclusive trend tutorials</h3>
+<p class="font-body-md text-body-md text-secondary">Master the latest seasonal looks with AI-guided lessons.</p>
+</div>
+<div class="flex flex-col items-center text-center p-stack-lg border border-outline-variant/10 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary mb-stack-sm text-3xl" data-icon="list_alt">list_alt</span>
+<h3 class="font-headline-sm text-headline-sm text-stone-900 mb-2">Full product breakdowns</h3>
+<p class="font-body-md text-body-md text-secondary">Get precise shades and application tips for every look.</p>
+</div>
+</section>
+<!-- Pricing Cards -->
+<section class="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-stack-lg mb-section-gap">
+<!-- Monthly Card -->
+<div class="flex flex-col p-8 border border-outline-variant/20 rounded-xl bg-surface-container relative overflow-hidden">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-stone-900">Monthly Subscription</h4>
+<p class="font-body-md text-body-md text-secondary">Flexible access to all features</p>
+</div>
+</div>
+<div class="mt-auto">
+<span class="font-display-md text-display-md text-stone-900">£9.99</span>
+<span class="font-body-md text-secondary">/ month</span>
+</div>
+<button class="mt-8 w-full py-4 bg-primary text-on-primary font-label-sm uppercase tracking-widest rounded-lg hover:opacity-90 transition-opacity">Unlock</button>
+</div>
+<!-- Lifetime Card -->
+<div class="flex flex-col p-8 border-2 border-primary rounded-xl bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-3 py-1 text-[10px] uppercase font-bold tracking-tighter rounded-full">Best Value</div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-stone-900">Lifetime Access</h4>
+<p class="font-body-md text-body-md text-secondary">One-time payment, forever yours</p>
+</div>
+</div>
+<div class="mt-auto">
+<span class="font-display-md text-display-md text-stone-900">£59.99</span>
+<span class="font-body-md text-secondary">/ forever</span>
+</div>
+<button class="mt-8 w-full py-4 bg-primary text-on-primary font-label-sm uppercase tracking-widest rounded-lg hover:opacity-90 transition-opacity">Unlock</button>
+</div>
+</section>
+<!-- Trust Footer -->
+<div class="flex flex-col items-center text-center max-w-md">
+<p class="font-body-md text-body-md text-secondary mb-4 italic">"Transform your perspective on beauty with our advanced neural rendering engine."</p>
+<div class="flex items-center gap-2 text-stone-400 font-label-sm uppercase tracking-tighter">
+<span class="material-symbols-outlined text-sm" data-icon="verified_user">verified_user</span>
+                Secure payment via Stripe &amp; Apple Pay
+            </div>
+<button class="mt-8 font-label-sm text-stone-400 hover:text-stone-900 underline decoration-stone-200 underline-offset-4">Restore Purchases</button>
+</div>
+</main>
+<!-- Spacer for Bottom Nav -->
+<div class="h-20 w-full"></div>
+<!-- BottomNavBar (Suppressed for transactional screen per mandate, but present as semantic shell example if needed. In this case, Paywall is "Transactional" hence the rule says exclude. However, if the user "closes", they go back to Home. I will keep it as a ghost/hidden element or follow the suppress rule) -->
+<!-- Rule: Suppress navigation shell if page intent is Transactional (Paywall) -->
+</body></html>

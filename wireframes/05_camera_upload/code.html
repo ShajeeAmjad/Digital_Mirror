@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3b0900",
+                        "outline": "#88726d",
+                        "primary": "#94452e",
+                        "surface-container-highest": "#e6e2db",
+                        "inverse-on-surface": "#f4f0e9",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1c17",
+                        "on-secondary-container": "#656464",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdbd1",
+                        "background": "#fdf9f2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e4e2e1",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-bright": "#fdf9f2",
+                        "on-tertiary-container": "#feffeb",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-dim": "#dddad3",
+                        "surface-container-low": "#f7f3ec",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "surface-tint": "#974730",
+                        "secondary": "#5f5e5e",
+                        "inverse-primary": "#ffb5a0",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#5d5c59",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#e4e2e1",
+                        "on-surface": "#1c1c17",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fffdff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary-fixed": "#e5e2dd",
+                        "outline-variant": "#dbc1ba",
+                        "on-primary-fixed-variant": "#78301b",
+                        "surface": "#fdf9f2",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-container": "#767571",
+                        "primary-container": "#b35d44",
+                        "surface-container": "#f2ede6",
+                        "inverse-surface": "#31302c",
+                        "surface-container-high": "#ece8e1",
+                        "on-surface-variant": "#55433e",
+                        "on-tertiary-fixed-variant": "#474743"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "grid-gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "page-margin": "20px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["inter"],
+                        "headline-sm": ["newsreader"],
+                        "label-sm": ["inter"],
+                        "body-md": ["inter"],
+                        "display-lg": ["newsreader"],
+                        "display-md": ["newsreader"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .camera-overlay-gradient {
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%, rgba(0,0,0,0.4) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60 docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<button class="hover:opacity-80 transition-opacity scale-95 active:duration-150 text-[#B35D44] dark:text-[#D98E77]">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="font-serif font-medium tracking-tight Newsreader text-2xl italic font-serif text-stone-900 dark:text-stone-100">Digital Mirror</h1>
+<button class="hover:opacity-80 transition-opacity scale-95 active:duration-150 text-[#B35D44] dark:text-[#D98E77]">
+<span class="material-symbols-outlined" data-icon="flash_on">flash_on</span>
+</button>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative overflow-hidden">
+<!-- Live Camera Feed Section -->
+<section class="relative flex-1 min-h-[442px] bg-stone-900 overflow-hidden">
+<img alt="Camera View" class="w-full h-full object-cover opacity-90" data-alt="Softly lit close-up of a person's face in a mirror, warm morning light, minimalist aesthetic, high-end skincare vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb-EInFl8iAEGYCivDFx9y4W8aTG9e1596qrb0yQoUmYhmla-eTYP20mL3DSPbQ43LG7ZN8MmeYLBD7V6tzfU9fppXJSVqr7K6_2vwaJUaFCYMAZW1gJZywUV3BRAmTVZg2FzRf34RD0tXyqPiMjGwMejYNYjtgBtA9WRjKYodtqjh0-N-RyffclWDcINbSd3gtbtU4L7q6qYHD7OonzShj5CPSVrABEwis5TtEQt2-sa7iMaVZxuh_up5ZC-ZTcd2P4xEaq9qkg"/>
+<!-- Lighting Guidance Overlay -->
+<div class="absolute inset-0 camera-overlay-gradient pointer-events-none flex flex-col items-center justify-between py-12">
+<div class="mt-8">
+<div class="bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+<span class="text-white font-label-sm tracking-widest uppercase text-[10px]">Lighting looks good</span>
+</div>
+</div>
+<!-- Framing Guide (Subtle) -->
+<div class="w-64 h-80 border-2 border-white/10 rounded-[40%] flex items-center justify-center">
+<div class="w-full h-full border border-white/5 rounded-[40%] scale-105"></div>
+</div>
+<div class="mb-4">
+<p class="text-white/80 font-body-md text-center px-12">Align your face within the frame for best results</p>
+</div>
+</div>
+</section>
+<!-- Control Center & Gallery Section -->
+<section class="bg-surface-container-low p-page-margin rounded-t-xl z-10 -mt-4 shadow-2xl">
+<!-- Mode Toggle -->
+<div class="flex justify-center mb-stack-lg">
+<div class="inline-flex bg-surface-container-highest p-1 rounded-full border border-outline-variant/30">
+<button class="px-6 py-1.5 rounded-full font-label-sm text-[11px] uppercase tracking-widest bg-primary-container text-on-primary-container shadow-sm transition-all">Camera</button>
+<button class="px-6 py-1.5 rounded-full font-label-sm text-[11px] uppercase tracking-widest text-secondary hover:text-on-surface transition-all">Gallery</button>
+</div>
+</div>
+<!-- Shutter & Primary Actions -->
+<div class="flex items-center justify-around mb-section-gap">
+<button class="w-12 h-12 rounded-full border border-outline-variant/50 flex items-center justify-center text-secondary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="photo_camera_front">photo_camera_front</span>
+</button>
+<div class="relative flex items-center justify-center">
+<div class="absolute w-20 h-20 rounded-full border-2 border-primary-container animate-ping opacity-20"></div>
+<button class="w-20 h-20 rounded-full bg-white border-4 border-primary-container shadow-lg active:scale-90 transition-transform duration-150 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full border border-stone-100 bg-primary-container"></div>
+</button>
+</div>
+<button class="w-12 h-12 rounded-full border border-outline-variant/50 flex items-center justify-center text-secondary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<!-- Recent Photos Gallery -->
+<div>
+<div class="flex justify-between items-end mb-stack-md">
+<h3 class="font-headline-sm text-lg text-on-surface">Recent Photos</h3>
+<button class="text-primary font-label-sm uppercase tracking-wider text-[10px]">View All</button>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 -mx-page-margin px-page-margin">
+<div class="shrink-0 w-24 h-24 rounded-lg overflow-hidden border border-outline-variant/20 hover:opacity-90 transition-opacity cursor-pointer">
+<img alt="Library Photo 1" class="w-full h-full object-cover" data-alt="High-end skincare product bottles on a minimalist marble shelf, soft focus background, editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfxmYcF-GVHBSMCh1nde6kk016hDI1uDmKFOrzWzoOTWoF18pzxilESIqLbrZbWX6m0jPhAMOuV6YWyq_EjfqxhOErM-LNf7lZjdZ7cGPmd8uIUiFWXSBuhacI7U_RZDUrU6AvD5ZJXjG-TnmVGe5E0NI84nAg7MN24Poh8ZsrChsdhUmW0_UmNvwnlE5LqjazsyEWMLLTJQe_Sa6NRLvJxHgMNp1RkdYIe0__f23Q2L84LG7Ts-rQCXnVW-q9NpM7gCAJhhljYQ"/>
+</div>
+<div class="shrink-0 w-24 h-24 rounded-lg overflow-hidden border border-outline-variant/20 hover:opacity-90 transition-opacity cursor-pointer">
+<img alt="Library Photo 2" class="w-full h-full object-cover" data-alt="Woman's profile with clean skin in natural sunlight, editorial photography style, warm tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZfkrkuzydLRSG-YS08nyNHr7iWCVfj-LBnNs9LPRHrVaxNbE38A-z5UsDXLoqEVBM5ur4ZkPDcvNl8dSuQ775y4I6JcC10G3mBdOocVt_XtUDhPwQZhiDzKK6edcV7yG1a3MVFc_htxUPE92op60dNhVqrymRE4Lz4-QJCBtpQd0g4qRbuQgP7mDEAN6Ebxm4YSio7DpuJK0ySNmy-LCSWyZQKA4_HhQMzK9S8AVFu4gfoLc1x2awZ-siQeVrgCL-8e1W6iO9wA"/>
+</div>
+<div class="shrink-0 w-24 h-24 rounded-lg overflow-hidden border border-outline-variant/20 hover:opacity-90 transition-opacity cursor-pointer">
+<img alt="Library Photo 3" class="w-full h-full object-cover" data-alt="Detail of skincare texture, white cream swirl on light beige background, artistic macro shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLlUI2ovOHAaZx9Gn9SZmNbAYVlDahuUXkD_ggRuAd0Xf4jPp9xHhR188OeOpc2FlrS7agmrsakF5rIqKUkDVpPKXmjW7SzLhkDAF5Jo7KECWVg2g6Zg2Nw32zKz6cF_uDPgEXv7HooDA3A2vGuu0F2U1KZ1EQifuMXWbp03HakYqDXr9PvmOp498I6g-zs2A4Tw9DsNCQws7uYoq1Nt1bmhryx6JgMZnCFkfcidrdfAMvFCVsr0YLmQ-LkfsuAzdoaED1ZuhrcA"/>
+</div>
+<div class="shrink-0 w-24 h-24 rounded-lg overflow-hidden border border-outline-variant/20 hover:opacity-90 transition-opacity cursor-pointer">
+<img alt="Library Photo 4" class="w-full h-full object-cover" data-alt="Abstract shadow of a plant on a clean off-white wall, minimalist interior aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMMNfYINk5Jf3--Sd9bn_fcbilLcx0w23hLmL5-tgjGw0Tkjv0gyc104SENcDs1hLSjmW90HAA7vmbG9rgrwCU6R9sqoSQ-ByaiQG_2fNSYJHqmVFugDkFFWXrzpdtGYazWL6b-r69n-QTX6YORseTeOLeQWcfO68IOSzs7hRsBvJZxPQOlZwWZHVAGqhFa-6t6Q0J0BZ0Vn8RR1nHkR4EFb0mMnhQItxhAKFtQ8FgDTj-zzEokSekKGh839sjeUu-zY3NLZED_g"/>
+</div>
+<div class="shrink-0 w-24 h-24 rounded-lg overflow-hidden border border-outline-variant/20 hover:opacity-90 transition-opacity cursor-pointer flex items-center justify-center bg-surface-container-high">
+<span class="material-symbols-outlined text-outline" data-icon="add">add</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-[#F9F7F2]/90 dark:bg-stone-950/90 backdrop-blur-md border-t border-stone-200/60 dark:border-stone-800/60 docked full-width bottom-0 rounded-t-lg z-50 fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6">
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#B35D44] dark:text-[#D98E77] transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Mirror</span>
+</button>
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Profile</span>
+</button>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

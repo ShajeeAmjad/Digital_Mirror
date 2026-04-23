@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3b0900",
+                        "outline": "#88726d",
+                        "primary": "#94452e",
+                        "surface-container-highest": "#e6e2db",
+                        "inverse-on-surface": "#f4f0e9",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1c17",
+                        "on-secondary-container": "#656464",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdbd1",
+                        "background": "#fdf9f2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e4e2e1",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-bright": "#fdf9f2",
+                        "on-tertiary-container": "#feffeb",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-dim": "#dddad3",
+                        "surface-container-low": "#f7f3ec",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "surface-tint": "#974730",
+                        "secondary": "#5f5e5e",
+                        "inverse-primary": "#ffb5a0",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#5d5c59",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#e4e2e1",
+                        "on-surface": "#1c1c17",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fffdff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary-fixed": "#e5e2dd",
+                        "outline-variant": "#dbc1ba",
+                        "on-primary-fixed-variant": "#78301b",
+                        "surface": "#fdf9f2",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-container": "#767571",
+                        "primary-container": "#b35d44",
+                        "surface-container": "#f2ede6",
+                        "inverse-surface": "#31302c",
+                        "surface-container-high": "#ece8e1",
+                        "on-surface-variant": "#55433e",
+                        "on-tertiary-fixed-variant": "#474743"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "grid-gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "page-margin": "20px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["inter"],
+                        "headline-sm": ["newsreader"],
+                        "label-sm": ["inter"],
+                        "body-md": ["inter"],
+                        "display-lg": ["newsreader"],
+                        "display-md": ["newsreader"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen">
+<!-- TopAppBar -->
+<nav class="bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-[#B35D44] dark:text-[#D98E77] hover:opacity-80 transition-opacity active:scale-95">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+<span class="text-2xl italic font-serif text-stone-900 dark:text-stone-100 font-medium tracking-tight Newsreader">Digital Mirror</span>
+<div class="flex items-center gap-3">
+<span class="hidden sm:block text-label-sm font-label-sm text-outline uppercase tracking-widest opacity-80">2 free looks remaining</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="portrait of a woman with natural makeup and clean aesthetic against a soft beige background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd-ZFyeWG-rqEfWiQ3WxzmZ2saFLb-4YNYA8SpGgV3B77e-dAvOwhijAGEYEWLxcrfvnaPNrU9Zs1mQk66Nf8NKn3tT1BoSwX63BSVrbwz_ac23cMHRwflY2tn1SoUPhHVpe8hiB8rsnCtf7buXOLCdrq4XwvyTLgqEu3Ra1DCNt824K6-nA71sqNRvIBkzehw7qq74kHRm3VhuQ44lfws7EeRH4F00mzX1tZTwZMU70Wz7AdJkrLhFdsQisgRylE-rS35JNG0qQ"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-32 max-w-screen-xl mx-auto px-page-margin">
+<!-- Mobile Credit Info (Redundant for small screens) -->
+<div class="sm:hidden mb-section-gap text-center">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-widest">2 free looks remaining</span>
+</div>
+<!-- This Week's Trend - Editorial Feature -->
+<section class="mb-section-gap">
+<div class="relative group cursor-pointer overflow-hidden rounded-xl bg-surface-container border border-outline/10">
+<div class="aspect-[4/5] md:aspect-[21/9] relative w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="editorial beauty shot of a woman wearing terracotta sunset makeup, warm golden hour lighting, desert landscape background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9JRvxa9_bsEoaBQ4zw4pH-NaKJgAMsHn3LntNOZswX12ktSA7B81fz6cU9AlIw0C1-c4BfyDpLPHzt38snIgkFaB7HsUqPaEoLayyvlkoofZnCc_z4dIXiqBgJCxMQMS1AvoP_IpRXfjI-5LHQ9Si6YDjTsUAvA0fibrVAMAH8Nbrdalpz4-M473bPlfYYoK2DzkOglYeNJbp0zREzU-obbxNwzBnUf5Rd6W7rLRuGyokxMn6pucRys9Dz1qo07Ygqs2sm-TqQQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-stack-lg md:p-10 w-full">
+<p class="text-white/80 font-label-sm text-label-sm uppercase tracking-[0.2em] mb-stack-sm">This Week's Trend</p>
+<h2 class="text-white font-display-md text-display-md mb-stack-md leading-none">Terracotta Sunset</h2>
+<div class="flex items-center gap-stack-md">
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-full font-label-sm text-label-sm uppercase tracking-widest transition-all hover:brightness-110 active:scale-95">
+                                Explore Look
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Saved Looks - Horizontal Carousel -->
+<section class="mb-section-gap">
+<div class="flex justify-between items-baseline mb-stack-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Saved Looks</h3>
+<a class="text-label-sm font-label-sm text-primary uppercase tracking-widest hover:underline" href="#">View All</a>
+</div>
+<div class="flex gap-grid-gutter overflow-x-auto no-scrollbar pb-4 snap-x">
+<!-- Look 1 -->
+<div class="flex-none w-40 snap-start group">
+<div class="aspect-[3/4] rounded-lg overflow-hidden border border-outline/10 bg-surface-container-high mb-stack-sm">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="soft lavender eyeshadow makeup look on a model with glowing skin and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOkQu-E1aYCDD8-MbD9Yq8COtvoHxl__gwXXeuVgICsX2AfLg4dU0MVnpu3rVwhZonGAHxLXoqMQ5m7IZ3SZTjtnmJG4F2WrJQ-a-hXFNJEui-qPtISP8_nawFeWsxTUiUCgmCpG1TxSvQGzfDMI4rXoHGJEWH9T55XnPfiw6DG9C_0Wh0ja3TOGJZnwIIl3vlTDj5baIIO4hJuqwhJeHsZfD1nMetPZaw1RKwf0TbahAU2jMH9jaagAcv2lPmBq8aV7kV2_FCRg"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Ethereal Glow</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">2 days ago</p>
+</div>
+<!-- Look 2 -->
+<div class="flex-none w-40 snap-start group">
+<div class="aspect-[3/4] rounded-lg overflow-hidden border border-outline/10 bg-surface-container-high mb-stack-sm">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="bold red lip makeup look with classic winged eyeliner, professional studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD01sO5RqPynPwuelNRmlbqf6x7-bU7O3uQtaYhkN_nvBi87bgM_Xcv2yV8usj6EAVx-0CDeIAvaISwX7y_iFd1-0qelLWYj97mgNTVzjME3gCyUWmLo0o5HGErzzFGpXkfqtyWAuMGh_eH_F6llMo2QdZ10BnKJUtAbHA1Gu8mFhTDrN3LKFfbCDTRApUhvteH1-7eM0RSm1kOn40bmNKQ1aEJY6ppMRqbE7-Jbz-ql0fBlEiViI8SacqVNxS5mfAXG1BkpvxN0g"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Midnight Gala</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Last week</p>
+</div>
+<!-- Look 3 -->
+<div class="flex-none w-40 snap-start group">
+<div class="aspect-[3/4] rounded-lg overflow-hidden border border-outline/10 bg-surface-container-high mb-stack-sm">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="natural no-makeup look with dewy skin and soft pink lip tint, bright airy lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtVxSXdKAaklSXFq3TOnhsk4FzQ7O8MzF2PL0YcYSz_wq4Zl4-ouQ5EsWZDcS7Cph9AWz0z4GXJz1xRU30NuJLpf9AZ-q8rzMfo4ImdBI1FLOY-0Inyf3QzjHu5eA0Y3gR9rGj3Wp2YQsBtKSTxrHX378xBOGOJQkGluvaz4HIFY7O9Aj3vM8H18Hd5cIP7YrAi6YMLqdVNtEHE16Ma6bOgvLQikSzpW9w-gvXMOXBBwOpyj86WWemb44qQpjKijfky-h96XdVcA"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Bare Canvas</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Oct 12</p>
+</div>
+<!-- Look 4 -->
+<div class="flex-none w-40 snap-start group">
+<div class="aspect-[3/4] rounded-lg overflow-hidden border border-outline/10 bg-surface-container-high mb-stack-sm">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern graphic eyeliner look with electric blue accents on a fashion model" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi37zwaIeDwZk50-dfl_ixF5oDoVOq-Hj-cY6m1PtvKYE0xLwC6e3QUxDbeWEY9gyzrMczcFQ98bFxuYka4Hap1cWyk6EyROf_2-A0TXWceBC62LWUc6xOluhf20CywIg7oTuMdXe8dqL6zwKPnxCgVKupABuw5DjhXYUNC0LdGWIfJd15v2Oqfrgvy5CjbxKIE-58htI0zEgDb8RPdXRTyPa6FtyF11a12Gy2-AvrPt0ti84BujwnCBZmGO2iTg3jwWBIEl88yA"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Electric Pulse</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Oct 08</p>
+</div>
+</div>
+</section>
+<!-- Inspiration Grid -->
+<section class="mb-section-gap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-stack-md">Curated for You</h3>
+<div class="grid grid-cols-2 gap-grid-gutter">
+<div class="bg-surface-container-low p-stack-md rounded-xl border border-outline/5">
+<div class="aspect-square rounded-lg overflow-hidden mb-stack-sm">
+<img class="w-full h-full object-cover" data-alt="macro shot of eyeshadow palettes with earthy ochre and gold tones, soft brush textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-1D8uHe50upi3oP35aRkZYJG8Dwi7zG3z9lD9Gol8melRo_ForRIYig_yg_n0EfOvB9OHzq4eP2u25sFv5SsHjZW_GkPhTO86Lc4yHSFJv909s4KMT5O9qsbjQwT0rc6631nqjs3qBDwHIJ4mtAXzp-wG6nVQpto-t5r7SizzIQY9cKSvzyJITV_U0JDxrd_OxK6o8rxpqDOyZFFTrun0Yfbw3reuT1pcTNGeFXCDOvAy2y5jgpqkH-2-50p6Ybp6DTOtNtbL3A"/>
+</div>
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Technique</p>
+<p class="font-body-md text-body-md text-on-surface leading-snug mt-1">Mastering the Blended Crease</p>
+</div>
+<div class="bg-surface-container-low p-stack-md rounded-xl border border-outline/5">
+<div class="aspect-square rounded-lg overflow-hidden mb-stack-sm">
+<img class="w-full h-full object-cover" data-alt="luxury skincare bottles on a stone tray with water droplets and morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvH4-KQ4i0LB8fjJxi7iRA_mkGzhQMV3t0h2FCpvdAOfPwxRvaOel4iNekQk8d1T918-d1njNwSGFJ_uGHwmcN8yPWvCTVXrBL6j8KX2W6wWVBdZgNtnt55bINeIoMFVcN1zKyrtanFOv2MpBcGoa0QXNJV3mlB-2ZXUQKjbDMqxXeEpaD8Nt3qSAZsctK7vRGpSZiTw1atP6_KMLdkMj-whWuAOpyCPy_aNJWcLne0BC5C1qOrRYiU12FoW5Bq4F2-8D9F9iIog"/>
+</div>
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Routine</p>
+<p class="font-body-md text-body-md text-on-surface leading-snug mt-1">Hydration for HD Camera</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating CTA -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 w-full max-w-md px-page-margin z-40">
+<button class="w-full bg-[#B35D44] text-white py-5 rounded-full font-serif italic text-lg shadow-xl hover:brightness-110 transition-all active:scale-95 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" data-icon="auto_fix_high">auto_fix_high</span>
+            Create a look
+        </button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-[#F9F7F2]/90 dark:bg-stone-950/90 backdrop-blur-md border-t border-stone-200/60 dark:border-stone-800/60 rounded-t-lg">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-[#B35D44] dark:text-[#D98E77] transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="home_max" style="font-variation-settings: 'FILL' 1;">home_max</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Home</span>
+</a>
+<!-- Trends -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Trends</span>
+</a>
+<!-- Library -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Library</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors group" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

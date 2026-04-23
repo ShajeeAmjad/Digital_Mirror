@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#3b0900",
+                    "outline": "#88726d",
+                    "primary": "#94452e",
+                    "surface-container-highest": "#e6e2db",
+                    "inverse-on-surface": "#f4f0e9",
+                    "error": "#ba1a1a",
+                    "on-background": "#1c1c17",
+                    "on-secondary-container": "#656464",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffdbd1",
+                    "background": "#fdf9f2",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e4e2e1",
+                    "tertiary-fixed-dim": "#c8c6c2",
+                    "surface-bright": "#fdf9f2",
+                    "on-tertiary-container": "#feffeb",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "surface-dim": "#dddad3",
+                    "surface-container-low": "#f7f3ec",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "surface-tint": "#974730",
+                    "secondary": "#5f5e5e",
+                    "inverse-primary": "#ffb5a0",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e6e2db",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#5d5c59",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#e4e2e1",
+                    "on-surface": "#1c1c17",
+                    "on-tertiary-fixed": "#1c1c19",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#fffdff",
+                    "on-secondary-fixed-variant": "#474747",
+                    "tertiary-fixed": "#e5e2dd",
+                    "outline-variant": "#dbc1ba",
+                    "on-primary-fixed-variant": "#78301b",
+                    "surface": "#fdf9f2",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "tertiary-container": "#767571",
+                    "primary-container": "#b35d44",
+                    "surface-container": "#f2ede6",
+                    "inverse-surface": "#31302c",
+                    "surface-container-high": "#ece8e1",
+                    "on-surface-variant": "#55433e",
+                    "on-tertiary-fixed-variant": "#474743"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "grid-gutter": "16px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "page-margin": "20px",
+                    "section-gap": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["inter"],
+                    "headline-sm": ["newsreader"],
+                    "label-sm": ["inter"],
+                    "body-md": ["inter"],
+                    "display-lg": ["newsreader"],
+                    "display-md": ["newsreader"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .Newsreader { font-family: 'Newsreader', serif; }
+        .inter { font-family: 'Inter', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopAppBar Shell -->
+<header class="bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<button class="text-[#B35D44] dark:text-[#D98E77] hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<h1 class="text-2xl italic font-serif text-stone-900 dark:text-stone-100 font-serif font-medium tracking-tight Newsreader">Digital Mirror</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a woman with clean skin and natural makeup, smiling softly against a neutral studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0jlU18wN8la1feNnPZWpb2zEiqhO7QPcotgRuWvlfySFyyPH3m65l95eoeyLF1iM9cPauJel68HRBWwC2jVtJqJyeeSgvqBXlMmTpnayykOdTr_bww9lulV7WYJlLUdktY-rrvI1LRcWdeVwjBg8bqCAa9EbDz5s39szxgi1GkAL-VYmVRJyvdiHuQGvQXhWvYYXu2jZ30o1zT1ht7fnSi-AXehr_zSt-dnbXnM9rx4XBKUiBtgdb_TXwvd4DVEWE2TvrOhPb4A"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-screen-xl mx-auto px-page-margin pt-12 pb-24">
+<!-- Header Section -->
+<section class="text-center mb-section-gap">
+<h2 class="font-display-md text-display-md text-on-surface mb-stack-sm Newsreader italic">How would you like to start?</h2>
+<p class="font-body-md text-body-md text-secondary max-w-md mx-auto">Your portrait is ready. Select a transformation path to begin your aesthetic journey.</p>
+</section>
+<!-- Creation Mode Selector Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+<!-- Option 1: Describe it -->
+<button class="group relative flex flex-col items-start text-left overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-low hover:bg-surface-container transition-all duration-300">
+<div class="aspect-[4/5] w-full relative overflow-hidden">
+<img alt="Describe it" class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700" data-alt="Ethereal close-up of light reflecting through a glass prism onto a clean white surface, creating soft rainbow flares and shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4qnuphUm158dwiftig2cgbRxDvlz1f7OazG54IDCB3a6kyesMaiNItxmJ178bUUvl-kXVJ3m5mYmn1J8BoxNahMzpO0pHvmE0j8-zzO7-lWSwtv_3hSSpiKcUikBipPSmAwFyfCxxy9T6m7_a2eNn6ScCGnzBieCaHthjYWrOXCqBdFysDCkT3M4fM-ug8GBzUXC8ykI4gSr5wuu8C5AyNVQrJ4R60z7vvQ0hFrEnYkDIoOhrAEFmoJO-IWbvNbgt180i3XCHXQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[20px]" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest inter">AI Guided</span>
+</div>
+</div>
+<div class="p-stack-lg w-full">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 Newsreader">Describe it</h3>
+<p class="font-body-md text-secondary mb-6 inter">Use natural language to guide the AI towards your desired aesthetic.</p>
+<div class="flex items-center text-primary font-label-sm text-label-sm uppercase tracking-widest gap-2 group-hover:gap-4 transition-all">
+<span>Begin description</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</button>
+<!-- Option 2: Design it -->
+<button class="group relative flex flex-col items-start text-left overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-low hover:bg-surface-container transition-all duration-300">
+<div class="aspect-[4/5] w-full relative overflow-hidden">
+<img alt="Design it" class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist architectural details with sharp lines and clean shadows on a warm beige concrete wall, representing precision and control." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9A08hc8VQwCGQY5IbWUI7Rot62Llcrn4KrT6pyAxg1hJQu0TnVl0YtjaUSS25x6ZMr0VVq5Z_6Ri1DkemCknmbw1cPSIDmyGLrA56r2Y1og1tEdTOFmDRsIycxuy68iNk76tSbrAyotjCpFju6BtlGsOi8aaA3wVgnU9bd3mWv9pcMujA48irZu7q4PQUnpxZdstXd58S5PtSzmrWpKPXdwi80UQ44fO-fKxFga8SqhSHyWgghWkmpZDaVuypGqRIFElazR70dg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest inter">Precision</span>
+</div>
+</div>
+<div class="p-stack-lg w-full">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 Newsreader">Design it</h3>
+<p class="font-body-md text-secondary mb-6 inter">Use precision controls and category pickers to define every detail.</p>
+<div class="flex items-center text-primary font-label-sm text-label-sm uppercase tracking-widest gap-2 group-hover:gap-4 transition-all">
+<span>Open workshop</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</button>
+<!-- Option 3: Start from a look -->
+<button class="group relative flex flex-col items-start text-left overflow-hidden rounded-xl border border-outline-variant/30 bg-surface-container-low hover:bg-surface-container transition-all duration-300">
+<div class="aspect-[4/5] w-full relative overflow-hidden">
+<img alt="Start from a look" class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700" data-alt="High-fashion editorial shot of a model with artistic makeup, soft studio lighting, and an elegant, minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABmCoq53YPSHUzqf-09p_d53TjCbIm7DxuGZZXa4fUfFSSwH8D8G7bYtyGsXhv-nkyPltjxG_LSuoWogAkKXWDgG5cBhuikolN9yi8TJSe6OhwFS2CY10gaT3r3V7YflsFFNhpeLQVcWfEfFSS-aZZRKWJH_Z_8MYKqqClyPmw3HCNmFsubCuz9dYdTFUMvZf-kF7-WZgk7vxgAW09B990UoHVvodAv851Bpyyo69UIYNEsJSEMkJ5eZ4_fgBf8EXgMiA5v98SPg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[20px]" data-icon="auto_stories">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest inter">Library</span>
+</div>
+</div>
+<div class="p-stack-lg w-full">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 Newsreader">Start from a look</h3>
+<p class="font-body-md text-secondary mb-6 inter">Choose from our curated library of high-end styles and signatures.</p>
+<div class="flex items-center text-primary font-label-sm text-label-sm uppercase tracking-widest gap-2 group-hover:gap-4 transition-all">
+<span>Browse looks</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</button>
+</div>
+<!-- Secondary Guidance -->
+<div class="mt-section-gap pt-12 border-t border-outline-variant/20 text-center">
+<p class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary mb-4 inter">Recently used looks</p>
+<div class="flex justify-center gap-4">
+<div class="w-12 h-12 rounded-full border border-outline-variant/40 p-0.5 overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="Abstract aesthetic texture of soft peach fabric with elegant folds and soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8o19c7R-0TmCcNVWcy8xjALu8VYz4CA5vwYxdcbWWsX0ySoIsA4IwZDA7kpa1eRrbd87Oia7OuSWXi5HO67KGjxrOLgyekv7cZ4wzHU8haVSmd5UtT3KO2zRNblcJr70to7DAZLD-idBDTXG2W62xDJ_sIYp5lINjCFPrOG-AJViJ3EU4lhbDavC4_-qEwAVOMjkUzS6aBe83SxXG7YM4jxffDq2aQkpLfhkllzkIge6vJ8KGTEIeGQQQfvUNEu2yKnye7MonJg"/>
+</div>
+<div class="w-12 h-12 rounded-full border border-outline-variant/40 p-0.5 overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="Deep purple and blue gradient with subtle grain texture, calm and moody aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvGuHw5bXornUKTXkTgI4jtElu19mRkhPfmAu5AqgwUOWl6dGJ7UKb0EdKqG7Y-7UutU32nnhfb-fMcGSA6k_und8gQSShrLHOdQrefcJPLHOvpJgKvsyj2Uuw6a6P27CnPQbLk_Qm28yPmj-vab4p-tCOrG9coW-6tlvYDPG70042MtSzm5fKB45yoIOvXg5GSYHhnZ1cnIJ4mBUOr7GIcSr5nKUeUVX1_CXa4z3eWDym9qgY4lD9CWK9ae7Z-SOTy701xEMz8g"/>
+</div>
+<div class="w-12 h-12 rounded-full border border-outline-variant/40 p-0.5 overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="Minimalist gold and white composition with soft shadows and metallic sheen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwk3CTL4RyjxZZS6tXBjHWT6l3fxZ0_mV0fL20P_HMyrVFxLsKvXuPW457zsVMJB_JKKi85v3ltLd57Tnhy37x76burdCuYjAmp-j4GXCZaCO1adreJi30JLgDfCjrlIhawKvnZE8t5KpEwEjxT3QFyToYeJxM_hLiw_mfWoVCcwOk-pt-wBOETFLaCgXlDsIw3B22R1wSWV87J0b327U5uAnpT7x-30HTKel53ooN6N6VQ3gpfKtlly1ZgJ46adOKHxCXS8lV2A"/>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="bg-[#F9F7F2]/90 dark:bg-stone-950/90 backdrop-blur-md border-t border-stone-200/60 dark:border-stone-800/60 fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-safe-offset-2 md:hidden">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors Active: transform scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#B35D44] dark:text-[#D98E77] transition-colors Active: transform scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Trends</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors Active: transform scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200 transition-colors Active: transform scale-90 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader">Profile</span>
+</a>
+</nav>
+</body></html>

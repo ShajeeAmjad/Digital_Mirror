@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Mirror - Face Profile Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3b0900",
+                        "outline": "#88726d",
+                        "primary": "#94452e",
+                        "surface-container-highest": "#e6e2db",
+                        "inverse-on-surface": "#f4f0e9",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1c17",
+                        "on-secondary-container": "#656464",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdbd1",
+                        "background": "#fdf9f2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e4e2e1",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-bright": "#fdf9f2",
+                        "on-tertiary-container": "#feffeb",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-dim": "#dddad3",
+                        "surface-container-low": "#f7f3ec",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "surface-tint": "#974730",
+                        "secondary": "#5f5e5e",
+                        "inverse-primary": "#ffb5a0",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#5d5c59",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#e4e2e1",
+                        "on-surface": "#1c1c17",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fffdff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary-fixed": "#e5e2dd",
+                        "outline-variant": "#dbc1ba",
+                        "on-primary-fixed-variant": "#78301b",
+                        "surface": "#fdf9f2",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-container": "#767571",
+                        "primary-container": "#b35d44",
+                        "surface-container": "#f2ede6",
+                        "inverse-surface": "#31302c",
+                        "surface-container-high": "#ece8e1",
+                        "on-surface-variant": "#55433e",
+                        "on-tertiary-fixed-variant": "#474743"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "grid-gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "page-margin": "20px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["inter"],
+                        "headline-sm": ["newsreader"],
+                        "label-sm": ["inter"],
+                        "body-md": ["inter"],
+                        "display-lg": ["newsreader"],
+                        "display-md": ["newsreader"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .camera-overlay {
+            mask-image: radial-gradient(circle at center, transparent 38%, black 40%);
+            -webkit-mask-image: radial-gradient(circle at center, transparent 38%, black 40%);
+        }
+        .shutter-glow {
+            box-shadow: 0 0 0 4px rgba(148, 69, 46, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-hidden">
+<!-- Top Navigation (Shared Component Integration) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<button class="hover:opacity-80 transition-opacity scale-95 active:duration-150 text-[#B35D44] dark:text-[#D98E77]">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h1 class="font-serif font-medium tracking-tight Newsreader text-2xl italic font-serif text-stone-900 dark:text-stone-100">Digital Mirror</h1>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline/10">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Portrait of a young woman with natural skin and soft lighting against a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCclh7vbPB02x_XYxbXTr3rMKb-ZsV6EegaxPvGYz8qNT_6daLsGj_E3WQnmW1txrhmLuBjdEpsfFRuv4izdU1JBOJE-ljzJ_Q2Hc1ePFBL0bFC9HhDaLib0UhUEldjFpoQebpeVPz2ZWT8IFmXf0ysvSeTstieKeOtdC2p3oVsdbG_f2pWq1MukbGw6NDR67jQsGnwdBs_4Clk91Coo20MjdfKFZc6xzkrhBffkUl1kCT-U9HNu7GeqZwwG7k0clCUicm-sDP4uQ"/>
+</div>
+</div>
+</header>
+<main class="relative h-screen w-full flex flex-col pt-16">
+<!-- Instruction Header Section -->
+<div class="px-page-margin py-stack-lg text-center bg-background/80 backdrop-blur-sm relative z-10">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2">Position your face in the frame</h2>
+<p class="font-body-md text-secondary max-w-xs mx-auto">Find a spot with natural, even lighting for the best results.</p>
+</div>
+<!-- AI Mirror / Camera Interface Component -->
+<div class="flex-grow relative overflow-hidden bg-surface-container">
+<!-- Simulated Camera Feed Background -->
+<div class="absolute inset-0 z-0">
+<img alt="Camera Feed" class="w-full h-full object-cover blur-[2px] opacity-70" data-alt="High-end beauty photography of a clear skin woman's face in soft morning sunlight, shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6TncNEuhga4EwdvBjaCeYLvm2ZnU84SgZsFcF5sMph7Ht2s2nRH6PAeni_MbTDzgPOTSOb4I0jEUt-WZY__rr4VcFXOjdirAk2kDi5HgG3EKU08zbbh5ds12y41QDHwo5LGmlbioKdT3-FoEG-h2nKaY8ACa-1UzqiD7Flc-Ngy-xiYdoQiP5COQM6lTJ18-ID6DhHnKMfnGWy5v3HU0voqoGIkc_9_gZeVKa_AwaZaDaynk52fUIvXkN8BwEoN3spUIbRvz5NQ"/>
+</div>
+<!-- Oval Masking Overlay -->
+<div class="absolute inset-0 z-10 bg-black/40 camera-overlay"></div>
+<!-- Border Indicator for Face Placement -->
+<div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+<div class="w-[280px] h-[380px] rounded-[140px] border-2 border-dashed border-white/60 flex items-center justify-center">
+<div class="w-[260px] h-[360px] rounded-[130px] border border-white/20"></div>
+</div>
+</div>
+<!-- Real-time HUD elements -->
+<div class="absolute top-8 left-1/2 -translate-x-1/2 z-30 flex gap-4">
+<div class="flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/30">
+<span class="material-symbols-outlined text-[16px] text-white">light_mode</span>
+<span class="font-label-sm text-white uppercase">Good Lighting</span>
+</div>
+</div>
+</div>
+<!-- Bottom Controls Section -->
+<div class="bg-background relative z-10 px-page-margin pt-stack-lg pb-12 flex flex-col items-center gap-stack-lg">
+<!-- Shutter Interaction -->
+<div class="flex items-center justify-center gap-12 w-full">
+<button class="w-10 h-10 flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">flash_off</span>
+</button>
+<button class="group relative flex items-center justify-center">
+<div class="absolute w-20 h-20 rounded-full border-2 border-primary transition-all group-active:scale-90 shutter-glow"></div>
+<div class="w-16 h-16 rounded-full bg-primary-container group-active:bg-primary transition-colors flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-[32px]">photo_camera</span>
+</div>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">cameraswitch</span>
+</button>
+</div>
+<!-- Secondary Actions -->
+<div class="flex flex-col items-center gap-stack-sm">
+<button class="font-label-sm text-on-surface uppercase tracking-widest border-b border-outline/30 pb-1 hover:border-on-surface transition-colors">
+                    Upload from gallery
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Component (Shared Component Instance) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-6 bg-[#F9F7F2]/90 dark:bg-stone-950/90 backdrop-blur-md border-t border-stone-200/60 dark:border-stone-800/60">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200" href="#">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#B35D44] dark:text-[#D98E77] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Trends</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-stone-900 dark:hover:text-stone-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-serif text-[11px] uppercase tracking-widest Newsreader mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

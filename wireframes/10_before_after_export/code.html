@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Mirror - Before &amp; After Export</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3b0900",
+                        "outline": "#88726d",
+                        "primary": "#94452e",
+                        "surface-container-highest": "#e6e2db",
+                        "inverse-on-surface": "#f4f0e9",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1c17",
+                        "on-secondary-container": "#656464",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#ffdbd1",
+                        "background": "#fdf9f2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e4e2e1",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "surface-bright": "#fdf9f2",
+                        "on-tertiary-container": "#feffeb",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-dim": "#dddad3",
+                        "surface-container-low": "#f7f3ec",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "surface-tint": "#974730",
+                        "secondary": "#5f5e5e",
+                        "inverse-primary": "#ffb5a0",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e6e2db",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#5d5c59",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#e4e2e1",
+                        "on-surface": "#1c1c17",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fffdff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "tertiary-fixed": "#e5e2dd",
+                        "outline-variant": "#dbc1ba",
+                        "on-primary-fixed-variant": "#78301b",
+                        "surface": "#fdf9f2",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-container": "#767571",
+                        "primary-container": "#b35d44",
+                        "surface-container": "#f2ede6",
+                        "inverse-surface": "#31302c",
+                        "surface-container-high": "#ece8e1",
+                        "on-surface-variant": "#55433e",
+                        "on-tertiary-fixed-variant": "#474743"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "grid-gutter": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "page-margin": "20px",
+                        "section-gap": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["inter"],
+                        "headline-sm": ["newsreader"],
+                        "label-sm": ["inter"],
+                        "body-md": ["inter"],
+                        "display-lg": ["newsreader"],
+                        "display-md": ["newsreader"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .comparison-slider {
+            position: relative;
+            overflow: hidden;
+        }
+        .comparison-slider .after-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            border-right: 2px solid white;
+        }
+        .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 20;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-[#F9F7F2] dark:bg-stone-950 border-b border-stone-200/60 dark:border-stone-800/60 docked full-width top-0 z-40 sticky">
+<div class="flex justify-between items-center w-full px-5 h-16 max-w-screen-xl mx-auto">
+<button class="text-[#B35D44] dark:text-[#D98E77] hover:opacity-80 transition-opacity scale-95 active:duration-150">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-2xl italic font-serif text-stone-900 dark:text-stone-100 font-serif font-medium tracking-tight Newsreader">Digital Mirror</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-stone-200">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a smiling woman with clean skin and soft natural lighting for a profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ox0RGwA8Fv0FAnQLi5f1GdKSHmzReyZLHMhsb-lp530pY2YhOzmFS0Czc8EyLRtTpyBXsGoIEx4QfGZ1m5IM56AxgRwHs9Ida9UdXUw2FEEaHj5rNyqYQAkfUynhSn_8bKAebpmevsI1haxBEvhr69VJEKfC55Lrkui29Q4P3pUD8oW3fLaAdoAg5H-EnnkDCAJ6rHMgZnfFP19lpIcHXeOJidLLHH9LBHw8Ec-E1n8_AOoay1ez406tzkJy6PSg-llXRkyLXQ"/>
+</div>
+</div>
+</header>
+<!-- Main Content: Before/After Comparison Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-page-margin py-section-gap">
+<div class="w-full max-w-2xl mx-auto space-y-stack-lg">
+<!-- Comparison Container -->
+<div class="relative w-full aspect-[3/4] bg-surface-container rounded-xl overflow-hidden border border-outline/10 group shadow-sm">
+<!-- Before Label -->
+<div class="absolute top-4 left-4 z-30 px-3 py-1 bg-black/30 backdrop-blur-md rounded-full">
+<span class="text-white font-label-sm text-label-sm uppercase tracking-widest">Original</span>
+</div>
+<!-- After Label -->
+<div class="absolute top-4 right-4 z-30 px-3 py-1 bg-primary/80 backdrop-blur-md rounded-full">
+<span class="text-white font-label-sm text-label-sm uppercase tracking-widest">Enhanced</span>
+</div>
+<!-- Images -->
+<div class="relative h-full w-full comparison-slider">
+<!-- Before Image (Base) -->
+<img alt="Original Look" class="absolute inset-0 w-full h-full object-cover" data-alt="Close-up portrait of a woman with natural, bare skin and soft morning light, editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQT3oH49JSpXNalNXMhZB_zsW1Dht7MjlOH06DEiVJRR3hAj5mUARMWbb_6Rq99cGL9HvG2nFR3_SBpZOuy4GAZryNszWHBVLCQSvuq51HpXBuDaSAHluBlKcGlsL-q0XMGrsncNlksxk2j9Ovx9MQnZC6EYuiQBss39bj1DY9iqjCxQFZNHxd6vM6V0mpUO8JuUBmPXSCXe3AGclzK2EZZYZNq4OPw0DIdcqog7dHOREynk0rQauT4phkl0yOCYCBUKZvPBue_g"/>
+<!-- After Image (Overlay) -->
+<div class="after-image" style="width: 50%;">
+<img alt="AI Makeup Look" class="absolute inset-0 w-full h-full object-cover" data-alt="Close-up portrait of a woman with glowing skin, subtle elegant makeup, soft shimmer, and warm studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArP_6Xy9v2fmeRws3iumfhUfNlZAB-zY7tlRUGaIUIiESFi7cS7EUDwu2EgEHN-NGvPrAXtEOLF7sexTxItekVeoyqSVBsa0AgAdvfHRtyLy-tKzU4JmgeymZlYDa7MJQqeIZJ77OcXjnm3EogBJH6CFukToYAUb0W1BzJk8pWZRsvGfnJtNWdYoRhCgkUo9whd6EufLRnh4hcP5_oD7KH8uhsh4x7G9Ly6JGQY8t6r-7ksRsf3fT9Jfz1G-lesnig_cx3lrwt2A" style="width: 200%; max-width: none;"/>
+</div>
+<!-- Slider Handle -->
+<div class="slider-handle">
+<span class="material-symbols-outlined text-stone-600">unfold_more</span>
+</div>
+<!-- Watermark -->
+<div class="absolute bottom-6 right-6 z-30 pointer-events-none opacity-60">
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm italic text-white drop-shadow-md">Digital Mirror</span>
+<span class="font-label-sm text-[10px] uppercase tracking-[0.2em] text-white/80">AI Analysis &amp; Vision</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Cluster -->
+<div class="flex flex-col gap-stack-md pt-stack-md">
+<div class="grid grid-cols-2 gap-stack-md">
+<!-- Download Button -->
+<button class="h-12 bg-on-background text-white flex items-center justify-center gap-2 rounded-lg hover:opacity-90 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span class="font-label-sm text-label-sm uppercase">Download HD</span>
+</button>
+<!-- Share Button -->
+<button class="h-12 border border-outline/30 text-on-background flex items-center justify-center gap-2 rounded-lg hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+<span class="font-label-sm text-label-sm uppercase">Share to Story</span>
+</button>
+</div>
+<!-- Done Button -->
+<button class="h-12 w-full bg-primary text-white flex items-center justify-center gap-2 rounded-lg hover:opacity-90 transition-all active:scale-[0.98]">
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Done</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Suppressed for transactional/focused screen as per instructions, but placeholder logic check: this is a confirmation/task-focused screen, so we exclude the full shell to prioritize the canvas) -->
+<!-- Footer Editorial Note (Minimalist) -->
+<footer class="pb-12 text-center">
+<p class="font-label-sm text-label-sm text-outline uppercase opacity-40">Preserving natural essence through intelligent enhancement.</p>
+</footer>
+</body></html>

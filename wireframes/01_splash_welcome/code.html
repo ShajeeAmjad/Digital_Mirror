@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Mirror - Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#3b0900",
+                    "outline": "#88726d",
+                    "primary": "#94452e",
+                    "surface-container-highest": "#e6e2db",
+                    "inverse-on-surface": "#f4f0e9",
+                    "error": "#ba1a1a",
+                    "on-background": "#1c1c17",
+                    "on-secondary-container": "#656464",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#ffdbd1",
+                    "background": "#fdf9f2",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e4e2e1",
+                    "tertiary-fixed-dim": "#c8c6c2",
+                    "surface-bright": "#fdf9f2",
+                    "on-tertiary-container": "#feffeb",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "surface-dim": "#dddad3",
+                    "surface-container-low": "#f7f3ec",
+                    "primary-fixed-dim": "#ffb5a0",
+                    "surface-tint": "#974730",
+                    "secondary": "#5f5e5e",
+                    "inverse-primary": "#ffb5a0",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e6e2db",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#5d5c59",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#e4e2e1",
+                    "on-surface": "#1c1c17",
+                    "on-tertiary-fixed": "#1c1c19",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#fffdff",
+                    "on-secondary-fixed-variant": "#474747",
+                    "tertiary-fixed": "#e5e2dd",
+                    "outline-variant": "#dbc1ba",
+                    "on-primary-fixed-variant": "#78301b",
+                    "surface": "#fdf9f2",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "tertiary-container": "#767571",
+                    "primary-container": "#b35d44",
+                    "surface-container": "#f2ede6",
+                    "inverse-surface": "#31302c",
+                    "surface-container-high": "#ece8e1",
+                    "on-surface-variant": "#55433e",
+                    "on-tertiary-fixed-variant": "#474743"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "grid-gutter": "16px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "page-margin": "20px",
+                    "section-gap": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Newsreader"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Newsreader"],
+                    "display-md": ["Newsreader"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-md": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fdf9f2; /* Shared Component: style_bg_color light */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Suppression: Not rendered as this is a transactional/onboarding splash screen -->
+<main class="flex-grow flex flex-col items-center justify-between px-page-margin pt-16 pb-12 max-w-screen-xl mx-auto w-full">
+<!-- Brand Identity Section -->
+<header class="w-full text-center space-y-stack-sm">
+<h1 class="font-display-lg text-display-lg italic text-on-surface">Digital Mirror</h1>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Your beauty, reimagined by AI</p>
+</header>
+<!-- Hero Content (Bento-style Editorial Layout) -->
+<section class="w-full max-w-2xl py-section-gap flex flex-col items-center">
+<div class="relative w-full aspect-[4/5] md:aspect-[3/2] overflow-hidden rounded-xl border border-stone-200/50">
+<img alt="Editorial beauty photography" class="w-full h-full object-cover grayscale-[0.2] contrast-[1.05]" data-alt="Close-up portrait of a woman with natural glowing skin and subtle texture under soft, warm window light, high-end editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChD67Sed-fAxlsMYGNJVmvPhMLVFeeW4ooanw2VM6Et0ZCGTNLvGR8HzKXM2v4ypfiqg0Lt4Kmb8ODidkwAK18nna8C55FrnGe3xVR_PBxU8MGQj-iAaUeFKpNrdXiFU7Due9LMVGN9GmGcs9CBdJoyFBHS02Wc0zH4FJn5cIKidNGMDkqiXfKlRwONZlnnKMQSJDfdfjVNCeXcY8L0NW6jHI6xQPoq0BxbNa0uIXtDuGjZGN1X7imDLHMNgoF8WXwwTQqdS0T9g"/>
+<!-- Subtle Tonal Layer Overlay -->
+<div class="absolute inset-0 bg-primary/5 mix-blend-multiply"></div>
+</div>
+<div class="mt-section-gap max-w-lg text-center space-y-stack-md">
+<p class="font-body-lg text-body-lg text-secondary">
+                    Discover a personalized path to skin health and cosmetic elegance through precision analysis and data-driven recommendations.
+                </p>
+</div>
+</section>
+<!-- Action Section -->
+<footer class="w-full flex flex-col items-center space-y-stack-lg">
+<button class="w-full max-w-sm h-14 bg-primary-container text-on-primary-container font-label-sm uppercase tracking-widest rounded-lg flex items-center justify-center transition-all hover:opacity-90 active:scale-95 duration-150">
+                Begin your journey
+            </button>
+<nav class="flex space-x-stack-lg items-center">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">Sign In</button>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors">Privacy Policy</button>
+</nav>
+</footer>
+</main>
+<!-- Bottom Navigation Suppression: Not rendered as this is a top-level splash screen -->
+<!-- Contextual FAB Suppression: Not rendered as this is a splash screen -->
+</body></html>
