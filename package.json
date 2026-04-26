@@ -1,0 +1,15 @@
+{
+  "name": "digital-mirror",
+  "private": true,
+  "workspaces": [
+    "apps/mobile"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start": "yarn workspace digital-mirror-mobile start",
+    "android": "yarn workspace digital-mirror-mobile android",
+    "ios": "yarn workspace digital-mirror-mobile ios",
+    "typecheck": "yarn workspace digital-mirror-mobile typecheck",
+    "test": "yarn workspace digital-mirror-mobile test"
+  }
+}

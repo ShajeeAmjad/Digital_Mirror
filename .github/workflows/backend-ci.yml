@@ -1,0 +1,56 @@
+name: Backend CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: digital_mirror_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - run: pip install -e ".[dev]"
+
+      - run: ruff check .
+
+      - run: mypy .
+
+      - run: pytest -x -q
+        env:
+          SUPABASE_URL: http://localhost:54321
+          SUPABASE_ANON_KEY: fake-anon-key
+          SUPABASE_JWT_SECRET: test-secret-minimum-32-characters-long!!
+          SUPABASE_DB_URL: postgresql+asyncpg://postgres:postgres@localhost:5432/digital_mirror_test
+          R2_ACCOUNT_ID: fake-account-id
+          R2_ACCESS_KEY: fake-access-key
+          R2_SECRET_KEY: fake-secret-key
+          R2_BUCKET: fake-bucket
+          R2_ENDPOINT: https://fake.r2.cloudflarestorage.com
+          UPSTASH_REDIS_URL: redis://localhost:6379
+          ANTHROPIC_API_KEY: fake-anthropic-key
+          REVENUECAT_SECRET_KEY: fake-revenuecat-key
+          APP_ENV: development

@@ -7,6 +7,10 @@
 SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_ANON_KEY=eyJ...
 SUPABASE_JWT_SECRET=your-jwt-secret          # From Supabase dashboard → Settings → API
+SUPABASE_DB_URL=postgresql+asyncpg://postgres:[password]@db.[ref].supabase.co:5432/postgres
+                                             # Direct PostgreSQL connection string for SQLAlchemy.
+                                             # Find under Supabase dashboard → Settings → Database → Connection string (URI mode).
+                                             # Use the asyncpg scheme (not plain postgresql://).
 
 # Cloudflare R2
 R2_ACCOUNT_ID=your-cloudflare-account-id

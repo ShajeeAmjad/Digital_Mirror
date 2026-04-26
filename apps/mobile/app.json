@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Digital Mirror",
+    "slug": "digital-mirror",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FAF7F2"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.digitalmirror.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Digital Mirror uses your camera to apply virtual makeup.",
+        "NSPhotoLibraryUsageDescription": "Digital Mirror can access your photo library to select photos for editing."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FAF7F2"
+      },
+      "package": "com.digitalmirror.app",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Digital Mirror uses your camera to apply virtual makeup."
+        }
+      ]
+    ]
+  }
+}
