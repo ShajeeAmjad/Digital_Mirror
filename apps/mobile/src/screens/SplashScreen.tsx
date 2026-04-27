@@ -80,11 +80,13 @@ const styles = StyleSheet.create({
     gap: Spacing.stackSm,
   },
   appName: {
-    fontSize: 48,
-    lineHeight: 52,
+    fontSize: 44,
+    lineHeight: 50,
+    fontFamily: 'Playfair Display',
+    // fontWeight: '700',
     fontStyle: 'italic',
-    color: Colors.charcoal,
-    letterSpacing: -0.96,
+    color: '#55433e',
+    letterSpacing: -0.5,
   },
   tagline: {
     fontSize: 12,
