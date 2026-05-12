@@ -2,6 +2,7 @@
   "expo": {
     "name": "Digital Mirror",
     "slug": "digital-mirror",
+    "scheme": "com.digitalmirror",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -36,7 +37,8 @@
         {
           "cameraPermission": "Digital Mirror uses your camera to apply virtual makeup."
         }
-      ]
+      ],
+      ["expo-web-browser"]
     ]
   }
 }

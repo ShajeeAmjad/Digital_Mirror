@@ -1,12 +1,16 @@
 import { Session } from '@supabase/supabase-js';
+import { makeRedirectUri } from 'expo-auth-session';
+import * as WebBrowser from 'expo-web-browser';
 import { useState } from 'react';
 
-import { api } from '@/api/client';
+import { createSessionFromUrl } from '@/lib/oauth';
 import { supabase } from '@/lib/supabase';
 
 interface UseAuthReturn {
-  signUp: (email: string, password: string) => Promise<void>;
-  signIn: (email: string, password: string) => Promise<void>;
+  signUp: (email: string, password: string) => Promise<boolean>;
+  signIn: (email: string, password: string) => Promise<boolean>;
+  signInWithGoogle: () => Promise<boolean>;
+  signInWithFacebook: () => Promise<boolean>;
   signOut: () => Promise<void>;
   session: Session | null;
   isLoading: boolean;
@@ -18,40 +22,69 @@ export function useAuth(): UseAuthReturn {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function signUp(email: string, password: string): Promise<void> {
+  async function signUp(email: string, password: string): Promise<boolean> {
     setIsLoading(true);
     setError(null);
     try {
       const { data, error: sbError } = await supabase.auth.signUp({ email, password });
-      if (sbError) {
-        setError(sbError.message);
-        return;
-      }
+      if (sbError) { setError(sbError.message); return false; }
       if (data.session) {
         setSession(data.session);
-        // Create the profile row on the backend
-        await api.post('/api/v1/auth/profile', {});
+        // Create the profile row on the backend (fire and forget — non-blocking)
+        supabase.auth.getSession().then(({ data: s }) => {
+          if (s.session) {
+            fetch(`${process.env.EXPO_PUBLIC_API_BASE_URL ?? 'http://localhost:8000'}/api/v1/auth/profile`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${s.session.access_token}`,
+              },
+              body: JSON.stringify({}),
+            }).catch(() => {/* non-fatal */});
+          }
+        });
       }
+      return true;
     } finally {
       setIsLoading(false);
     }
   }
 
-  async function signIn(email: string, password: string): Promise<void> {
+  async function signIn(email: string, password: string): Promise<boolean> {
     setIsLoading(true);
     setError(null);
     try {
-      const { data, error: sbError } = await supabase.auth.signInWithPassword({
-        email,
-        password,
+      const { data, error: sbError } = await supabase.auth.signInWithPassword({ email, password });
+      if (sbError) { setError(sbError.message); return false; }
+      if (data.session) setSession(data.session);
+      return true;
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  async function signInWithProvider(provider: 'google' | 'facebook'): Promise<boolean> {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const redirectTo = makeRedirectUri({ scheme: 'com.digitalmirror', path: 'auth/callback' });
+      const { data, error: sbError } = await supabase.auth.signInWithOAuth({
+        provider,
+        options: { redirectTo, skipBrowserRedirect: true },
       });
-      if (sbError) {
-        setError(sbError.message);
-        return;
+      if (sbError || !data.url) {
+        setError(sbError?.message ?? 'OAuth failed');
+        return false;
       }
-      if (data.session) {
-        setSession(data.session);
-      }
+      const result = await WebBrowser.openAuthSessionAsync(data.url, redirectTo);
+      if (result.type !== 'success') return false;
+      await createSessionFromUrl(result.url);
+      const { data: sessionData } = await supabase.auth.getSession();
+      if (sessionData.session) setSession(sessionData.session);
+      return true;
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : 'OAuth failed');
+      return false;
     } finally {
       setIsLoading(false);
     }
@@ -67,5 +100,14 @@ export function useAuth(): UseAuthReturn {
     }
   }
 
-  return { signUp, signIn, signOut, session, isLoading, error };
+  return {
+    signUp,
+    signIn,
+    signInWithGoogle: () => signInWithProvider('google'),
+    signInWithFacebook: () => signInWithProvider('facebook'),
+    signOut,
+    session,
+    isLoading,
+    error,
+  };
 }

@@ -18,7 +18,20 @@ export const Routes = {
 
 export type RouteName = (typeof Routes)[keyof typeof Routes];
 
-// All params default to undefined; future phases add typed params per-screen.
 export type RootStackParamList = {
-  [K in RouteName]: undefined;
+  Splash: undefined;
+  FaceProfileSetup: undefined;
+  GoalSelection: { object_key?: string } | undefined;
+  Home: undefined;
+  CameraUpload: undefined;
+  CreationModeSelector: { object_key: string };
+  Editor: { object_key: string; goals?: string[] };
+  AICritique: undefined;
+  ProductRecommendations: undefined;
+  BeforeAfterExport: undefined;
+  Paywall: undefined;
+  TutorialOverview: undefined;
+  TutorialStepDetail: undefined;
+  Profile: undefined;
+  TrendsFeed: undefined;
 };

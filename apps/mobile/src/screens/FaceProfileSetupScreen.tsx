@@ -24,7 +24,7 @@ type ScreenMode = 'auth' | 'camera';
 
 export default function FaceProfileSetupScreen() {
   const navigation = useNavigation<Nav>();
-  const { signUp, signIn, isLoading, error } = useAuth();
+  const { signUp, signIn, signInWithGoogle, signInWithFacebook, isLoading, error } = useAuth();
   const [cameraPermission, requestCameraPermission] = useCameraPermissions();
 
   const [screenMode, setScreenMode] = useState<ScreenMode>('auth');
@@ -35,17 +35,27 @@ export default function FaceProfileSetupScreen() {
 
   async function handleSubmit() {
     if (authMode === 'signup') {
-      await signUp(email, password);
-      if (!error) {
+      const ok = await signUp(email, password);
+      if (ok) {
         await requestCameraPermission();
         setScreenMode('camera');
       }
     } else {
-      await signIn(email, password);
-      if (!error) {
+      const ok = await signIn(email, password);
+      if (ok) {
         navigation.replace(Routes.Home);
       }
     }
+  }
+
+  async function handleGoogleSignIn() {
+    const ok = await signInWithGoogle();
+    if (ok) navigation.replace(Routes.Home);
+  }
+
+  async function handleFacebookSignIn() {
+    const ok = await signInWithFacebook();
+    if (ok) navigation.replace(Routes.Home);
   }
 
   function handleCapture() {
@@ -185,6 +195,30 @@ export default function FaceProfileSetupScreen() {
             </Text>
           )}
         </TouchableOpacity>
+
+        {/* Social auth divider */}
+        <View style={styles.dividerRow}>
+          <View style={styles.dividerLine} />
+          <Text style={styles.dividerText}>OR CONTINUE WITH</Text>
+          <View style={styles.dividerLine} />
+        </View>
+
+        {/* Social auth buttons */}
+        <TouchableOpacity
+          style={styles.socialButton}
+          onPress={handleGoogleSignIn}
+          disabled={isLoading}
+        >
+          <Text style={styles.socialButtonText}>CONTINUE WITH GOOGLE</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.socialButton}
+          onPress={handleFacebookSignIn}
+          disabled={isLoading}
+        >
+          <Text style={styles.socialButtonText}>CONTINUE WITH FACEBOOK</Text>
+        </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
   );
@@ -291,6 +325,36 @@ const styles = StyleSheet.create({
     fontSize: 12,
     letterSpacing: 2,
     fontWeight: '600',
+  },
+  dividerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.stackMd,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: Colors.neutral,
+  },
+  dividerText: {
+    fontSize: 10,
+    fontWeight: '600',
+    letterSpacing: 1.5,
+    color: '#88726d',
+  },
+  socialButton: {
+    height: 48,
+    borderWidth: 1,
+    borderColor: Colors.neutral,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  socialButtonText: {
+    fontSize: 12,
+    fontWeight: '600',
+    letterSpacing: 1.5,
+    color: Colors.charcoal,
   },
 
   // Camera styles
