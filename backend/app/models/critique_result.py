@@ -1,6 +1,7 @@
+import datetime
 import uuid
 
-from sqlalchemy import ForeignKey, Integer, text
+from sqlalchemy import DateTime, ForeignKey, Integer, text
 from sqlalchemy.dialects.postgresql import ARRAY, JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -26,10 +27,12 @@ class CritiqueResult(Base):
         nullable=False,
     )
     score: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    tips: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    tips: Mapped[dict[str, object] | None] = mapped_column(JSONB, nullable=True)
     product_ids: Mapped[list[uuid.UUID] | None] = mapped_column(
         ARRAY(UUID(as_uuid=True)), nullable=True
     )
-    created_at: Mapped[str] = mapped_column(
-        server_default=text("now()"), nullable=False
+    created_at: Mapped[datetime.datetime] = mapped_column(
+        DateTime(timezone=True),
+        server_default=text("now()"),
+        nullable=False,
     )

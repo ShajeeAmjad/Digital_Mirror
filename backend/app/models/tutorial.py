@@ -19,5 +19,5 @@ class Tutorial(Base):
     category: Mapped[str] = mapped_column(Text, nullable=False)
     difficulty: Mapped[str] = mapped_column(Text, nullable=False)
     is_premium: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
-    steps: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
+    steps: Mapped[dict[str, object] | None] = mapped_column(JSONB, nullable=True)
     thumbnail_key: Mapped[str | None] = mapped_column(Text, nullable=True)

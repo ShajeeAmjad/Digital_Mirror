@@ -1,6 +1,6 @@
 import uuid
 
-from sqlalchemy import ARRAY, String, Text, numeric, text
+from sqlalchemy import ARRAY, Numeric, String, Text, text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -21,6 +21,6 @@ class Product(Base):
     shade: Mapped[str | None] = mapped_column(Text, nullable=True)
     hex_color: Mapped[str | None] = mapped_column(Text, nullable=True)
     image_key: Mapped[str | None] = mapped_column(Text, nullable=True)
-    price_gbp: Mapped[float | None] = mapped_column(numeric(10, 2), nullable=True)
+    price_gbp: Mapped[float | None] = mapped_column(Numeric(10, 2), nullable=True)
     affiliate_url: Mapped[str | None] = mapped_column(Text, nullable=True)
     skin_tones: Mapped[list[str] | None] = mapped_column(ARRAY(String), nullable=True)

@@ -1,9 +1,11 @@
+from typing import Any
+
 import boto3
 
 from app.core.config import settings
 
 
-def _s3_client() -> boto3.client:  # type: ignore[valid-type]
+def _s3_client() -> Any:
     return boto3.client(
         "s3",
         endpoint_url=settings.R2_ENDPOINT,

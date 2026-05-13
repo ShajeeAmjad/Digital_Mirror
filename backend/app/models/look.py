@@ -1,6 +1,7 @@
+import datetime
 import uuid
 
-from sqlalchemy import ForeignKey, Text, text
+from sqlalchemy import DateTime, ForeignKey, Text, text
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -23,7 +24,9 @@ class Look(Base):
     title: Mapped[str | None] = mapped_column(Text, nullable=True)
     original_key: Mapped[str] = mapped_column(Text, nullable=False)
     result_key: Mapped[str | None] = mapped_column(Text, nullable=True)
-    layer_config: Mapped[dict | None] = mapped_column(JSONB, nullable=True)
-    created_at: Mapped[str] = mapped_column(
-        server_default=text("now()"), nullable=False
+    layer_config: Mapped[dict[str, object] | None] = mapped_column(JSONB, nullable=True)
+    created_at: Mapped[datetime.datetime] = mapped_column(
+        DateTime(timezone=True),
+        server_default=text("now()"),
+        nullable=False,
     )

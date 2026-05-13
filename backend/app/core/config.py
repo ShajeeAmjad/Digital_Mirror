@@ -14,7 +14,8 @@ class Settings(BaseSettings):
     SUPABASE_URL: str
     SUPABASE_ANON_KEY: str
     SUPABASE_JWT_SECRET: str
-    SUPABASE_DB_URL: str  # postgresql+asyncpg://... (direct DB connection, not the HTTP URL)
+    # postgresql+asyncpg://... (direct DB connection, not HTTP URL)
+    SUPABASE_DB_URL: str
 
     # Cloudflare R2
     R2_ACCOUNT_ID: str
@@ -36,4 +37,4 @@ class Settings(BaseSettings):
     APP_ENV: Literal["development", "production"] = "development"
 
 
-settings = Settings()
+settings = Settings()  # type: ignore[call-arg]

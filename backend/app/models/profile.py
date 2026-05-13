@@ -1,6 +1,7 @@
+import datetime
 import uuid
 
-from sqlalchemy import ARRAY, String, Text, func, text
+from sqlalchemy import ARRAY, DateTime, String, Text, func, text
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -22,10 +23,13 @@ class Profile(Base):
     subscription_status: Mapped[str] = mapped_column(
         Text, nullable=False, server_default="free"
     )
-    created_at: Mapped[str] = mapped_column(
-        server_default=text("now()"), nullable=False
+    created_at: Mapped[datetime.datetime] = mapped_column(
+        DateTime(timezone=True),
+        server_default=text("now()"),
+        nullable=False,
     )
-    updated_at: Mapped[str] = mapped_column(
+    updated_at: Mapped[datetime.datetime] = mapped_column(
+        DateTime(timezone=True),
         server_default=text("now()"),
         onupdate=func.now(),
         nullable=False,

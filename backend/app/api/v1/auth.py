@@ -14,8 +14,8 @@ router = APIRouter()
 
 @router.get("/me", response_model=APIResponse[ProfileResponse])
 async def get_me(
-    user_id: str = Depends(get_current_user),
-    db: AsyncSession = Depends(get_db),
+    user_id: str = Depends(get_current_user),  # noqa: B008
+    db: AsyncSession = Depends(get_db),  # noqa: B008
 ) -> APIResponse[ProfileResponse]:
     result = await db.execute(
         select(Profile).where(Profile.id == uuid.UUID(user_id))
@@ -29,8 +29,8 @@ async def get_me(
 @router.post("/profile", response_model=APIResponse[ProfileResponse])
 async def upsert_profile(
     body: ProfileCreateRequest,
-    user_id: str = Depends(get_current_user),
-    db: AsyncSession = Depends(get_db),
+    user_id: str = Depends(get_current_user),  # noqa: B008
+    db: AsyncSession = Depends(get_db),  # noqa: B008
 ) -> APIResponse[ProfileResponse]:
     uid = uuid.UUID(user_id)
 

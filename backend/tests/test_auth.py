@@ -1,6 +1,5 @@
 from unittest.mock import AsyncMock, patch
 
-import jwt
 import pytest
 from httpx import AsyncClient
 
